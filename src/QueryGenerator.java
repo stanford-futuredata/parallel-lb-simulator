@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Vector;
 import java.util.concurrent.ThreadLocalRandom;
@@ -55,7 +56,7 @@ public class QueryGenerator {
 
     // Output results on all queries once completed
     // Should only be run after manager.startAllServers() has finished
-    public void outputStatistics(String graphTitle, String seriesName) {
+    public void outputStatistics(String graphTitle, String seriesName) throws IOException {
         Vector<Double> allLatencies = new Vector<Double>();
         for (Query i : allQueries) {
             i.populateLatencyVector(allLatencies);
@@ -80,7 +81,20 @@ public class QueryGenerator {
             System.out.println("Shard " + (i + 1) + ") " + shard_load[i]);
         }
 
-        PlotHistogram.displayGraph(graphTitle, seriesName, allLatencies);
+        PlotData.displayGraph(graphTitle, seriesName, allLatencies);
+    }
+
+    public static void outputStatistics(String graphTitle, String seriesName, Vector<Query> allQueries) throws IOException {
+        Vector<Double> allLatencies = new Vector<Double>();
+
+        for (Query i : allQueries) {
+            i.populateLatencyVector(allLatencies);
+        }
+
+        // Sort latencies to access 99 and 99.9 latencies
+        Collections.sort(allLatencies);
+
+        PlotData.displayGraph(graphTitle, seriesName, allLatencies);
     }
 
     public String toString() {
