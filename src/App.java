@@ -14,14 +14,16 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND);
+        serialQueries();
+        serialQueriesVariableDuration();
 
         // Generate sequential servers
-        ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE, ServerManager.ServerType.SEQUENTIAL);
-        randomQueries.assignQueries(manager);
-        manager.startAllServers(false);
-        randomQueries.outputStatistics(
-        "Latency for sequential shard storage.",
-        "Sequential");
+        // ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE, ServerManager.ServerType.SEQUENTIAL);
+        // randomQueries.assignQueries(manager);
+        // manager.startAllServers(false);
+        // randomQueries.outputStatistics(
+        // "Latency for sequential shard storage.",
+        // "Sequential");
 
         // Generate round-robin servers
 //        manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE, ServerManager.ServerType.ROUND_ROBIN);
