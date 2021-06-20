@@ -11,9 +11,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class QueryGenerator {
     // Constants for random query generation
     public final double SHARD_ACCESS_TIME;
-    // When generating queries, use exponential distribution to model time between new queries arriving
+    // When generating queries, use exponential distribution to model time between
+    // new queries arriving
     public final double AVERAGE_QUERY_RATE;
     private final int NUM_QUERIES;
+    private final int NUM_SHARD_ACCESS_PER_QUERY;
 
     // Variables to keep track of final statistics
     private Vector<Query> allQueries = new Vector<Query>();
@@ -23,6 +25,15 @@ public class QueryGenerator {
         NUM_QUERIES = queries;
         SHARD_ACCESS_TIME = accessTime;
         AVERAGE_QUERY_RATE = queryRate;
+        NUM_SHARD_ACCESS_PER_QUERY = -1;
+        generateRandomQueries();
+    }
+
+    public QueryGenerator(int queries, double accessTime, double queryRate, int numShards) {
+        NUM_QUERIES = queries;
+        SHARD_ACCESS_TIME = accessTime;
+        AVERAGE_QUERY_RATE = queryRate;
+        NUM_SHARD_ACCESS_PER_QUERY = numShards;
         generateRandomQueries();
     }
 
@@ -32,8 +43,23 @@ public class QueryGenerator {
             // Generate query and a random range of shards to be accessed
             Query newQuery = new Query(startTime, SHARD_ACCESS_TIME);
 
-            int shardRangeStart = ThreadLocalRandom.current().nextInt(1, App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1);
-            int shardRangeEnd   = ThreadLocalRandom.current().nextInt(shardRangeStart, App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1);
+            int shardRangeStart;
+            int shardRangeEnd;
+            if (NUM_SHARD_ACCESS_PER_QUERY == -1) {
+                shardRangeStart = ThreadLocalRandom.current().nextInt(1,
+                        App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1);
+                shardRangeEnd = ThreadLocalRandom.current().nextInt(shardRangeStart,
+                        App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1);
+
+            } else if (NUM_SHARD_ACCESS_PER_QUERY == App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES) { // Prevent errors when want all shards accessed
+                shardRangeStart = 1;
+                shardRangeEnd = App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES;
+            } else {
+                shardRangeStart = ThreadLocalRandom.current().nextInt(1,
+                        App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1 - NUM_SHARD_ACCESS_PER_QUERY);
+                shardRangeEnd = shardRangeStart + NUM_SHARD_ACCESS_PER_QUERY - 1;
+            }
+
             Vector<Integer> accessedShards = new Vector<Integer>();
             for (int j = shardRangeStart; j <= shardRangeEnd; j++) {
                 accessedShards.add(j);
@@ -57,23 +83,14 @@ public class QueryGenerator {
     // Output results on all queries once completed
     // Should only be run after manager.startAllServers() has finished
     public void outputStatistics(String graphTitle, String seriesName) throws IOException {
-        Vector<Double> allLatencies = new Vector<Double>();
+        Vector<PlotData> allLatencies = new Vector<PlotData>();
         for (Query i : allQueries) {
             i.populateLatencyVector(allLatencies);
         }
 
-        // Sort latencies to access 99 and 99.9 latencies
-        Collections.sort(allLatencies);
-
         System.out.println("RESULTS\n---------------------------------");
-        System.out.println("Finished running " + allQueries.size() + " queries. Displaying results for " + allLatencies.size() + " shard accesses.");
-
-        // Index of latency percentiles
-        int latency_99th = (int) Math.floor(allLatencies.size() * 0.99);
-        int latency_999th = (int) Math.floor(allLatencies.size() * 0.999);
-
-        System.out.println("99th percentile for latency: " + allLatencies.get(latency_99th) + " (index = " + latency_99th + ")");
-        System.out.println("99.9th percentile for latency: " + allLatencies.get(latency_999th) + " (index = " + latency_999th + ")");
+        System.out.println("Finished running " + allQueries.size() + " queries. Displaying results for "
+                + allLatencies.size() + " shard accesses.");
 
         // Output shard loads
         System.out.println("Number of accesses per shard: ");
@@ -84,15 +101,13 @@ public class QueryGenerator {
         PlotData.displayGraph(graphTitle, seriesName, allLatencies);
     }
 
-    public static void outputStatistics(String graphTitle, String seriesName, Vector<Query> allQueries) throws IOException {
-        Vector<Double> allLatencies = new Vector<Double>();
+    public static void outputStatistics(String graphTitle, String seriesName, Vector<Query> allQueries)
+            throws IOException {
+        Vector<PlotData> allLatencies = new Vector<PlotData>();
 
         for (Query i : allQueries) {
             i.populateLatencyVector(allLatencies);
         }
-
-        // Sort latencies to access 99 and 99.9 latencies
-        Collections.sort(allLatencies);
 
         PlotData.displayGraph(graphTitle, seriesName, allLatencies);
     }

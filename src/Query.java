@@ -26,9 +26,10 @@ public class Query {
     }
 
     // For storing output statistics in an input vector
-    public void populateLatencyVector(Vector<Double> latencies) {
+    public void populateLatencyVector(Vector<PlotData> latencies) {
         for (ShardAccess i : shards) {
-            latencies.add(i.getLatency());
+            PlotData newEntry = new PlotData(i.getLatency(), manager.getServerForShard(i).MACHINE_ID);
+            latencies.add(newEntry);
         }
     }
 
