@@ -3,28 +3,42 @@ import java.util.Vector;
 public class App {
 
     // Constants for server generation
-    public static final int NUM_MACHINES = 4;
-    public static final int NUM_CORES_PER_MACHINE = 3;
-    public static final int NUM_SHARDS_PER_MACHINE = 100;
+    public static final int NUM_MACHINES = 50;
+    public static final int NUM_CORES_PER_MACHINE = 1;
+    public static final int NUM_SHARDS_PER_MACHINE = 50;
 
     // Constants for query generation
-    public static final int NUM_QUERIES = 50000;
-    public static final int NUM_SHARD_ACCESS_PER_QUERY = 126;
+    public static final int NUM_QUERIES = 100000;
+    public static final int NUM_SHARD_ACCESS_PER_QUERY = 3;
     public static final double SECONDS_PER_ACCESS = 1;
-    public static final double AVG_QUERIES_PER_SECOND = 2;
+    public static final double AVG_QUERIES_PER_SECOND = 5;
 
     public static void main(String[] args) throws Exception {
         QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND,
-                NUM_SHARD_ACCESS_PER_QUERY);
+                NUM_SHARD_ACCESS_PER_QUERY, true);
 
         // Generate sequential servers
+        // ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
+        //         ServerManager.ServerType.SEQUENTIAL);
+        // randomQueries.assignQueries(manager);
+        // manager.startAllServers(false);
+        // randomQueries.outputStatistics("Latency for sequential shard storage (20,000 x random shard accesses).",
+        //         "Sequential");
+
         ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-                ServerManager.ServerType.SEQUENTIAL);
+                ServerManager.ServerType.ROUND_ROBIN);
         randomQueries.assignQueries(manager);
         manager.startAllServers(false);
-        randomQueries.outputStatistics("Latency for sequential shard storage with (50,000 x 50% shard accesses).",
-                "25");
+        randomQueries.outputStatistics("Latency for round-robin shard storage (100,000 x 3 shard accesses).",
+                "Round Robin");
                 
+
+        manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
+                ServerManager.ServerType.RANDOM);
+        randomQueries.assignQueries(manager);
+        manager.startAllServers(false);
+        randomQueries.outputStatistics("Latency for random shard storage (100000 x 3 shard accesses).",
+                "Random");
 
 
         // Generate sequential servers

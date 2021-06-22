@@ -28,7 +28,8 @@ with open('OUTPUT.txt') as f:
 			elif not seriesName:
 				seriesName = line.strip()
 			else:
-				normalisedX = np.array(currentGraphData) / currentGraphData[-1]
+				finalArray = np.array(currentGraphData)
+				normalisedX = finalArray / max(currentGraphData)
 
 				plt.figure(1)
 				sns.ecdfplot(normalisedX, label=seriesName)
@@ -43,6 +44,9 @@ with open('OUTPUT.txt') as f:
 
 				plt.figure(currentPdfCount)
 				currentPdfCount += 1
+
+				print("99th Percentile of", graphTitle, ":", np.percentile(finalArray, 99))
+				print("99.9th Percentile of", graphTitle, ":", np.percentile(finalArray, 99.9))
 
 				allData = [currentMachineData[i] for i in currentMachineData]
 				labels = [i for i in currentMachineData]
@@ -65,7 +69,8 @@ with open('OUTPUT.txt') as f:
 			currentMachineData[machineId].append(float(value))
 
 # Graph final set of data
-normalisedX = np.array(currentGraphData) / currentGraphData[-1]
+finalArray = np.array(currentGraphData)
+normalisedX = finalArray / max(currentGraphData)
 
 plt.figure(1)
 sns.ecdfplot(normalisedX, label=seriesName)
@@ -78,13 +83,17 @@ plt.suptitle("PDF: " + graphTitle)
 plt.xlabel("Latency (unit time)")
 plt.ylabel("Proportion")
 
+print("99th Percentile of", graphTitle, ":", np.percentile(finalArray, 99))
+print("99.9th Percentile of", graphTitle, ":", np.percentile(finalArray, 99.9))
+
+
 plt.figure(currentPdfCount)
 currentPdfCount += 1
 
 allData = [currentMachineData[i] for i in currentMachineData]
 labels = [i for i in currentMachineData]
 plt.hist(allData, label=labels)
-plt.suptitle("Machine Latency: " + graphTitle)
+plt.suptitle("Machine Load: " + graphTitle)
 plt.legend(loc='upper right')
 
 graphTitle = None

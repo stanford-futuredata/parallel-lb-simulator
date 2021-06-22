@@ -30,6 +30,10 @@ public class Server {
     public Shard getShard(ShardAccess access) {
         return getShard(access.getShardId());
     }
+
+    public int getNumShards() {
+        return idToShard.size();
+    }
     
     private Optional<ShardAccess> findNextProcessToRun() {
         // Find soonest query on a free shard 
