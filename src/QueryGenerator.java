@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.Collections;
 import java.util.Vector;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,26 +18,27 @@ public class QueryGenerator {
 
     // Variables to keep track of final statistics
     private Vector<Query> allQueries = new Vector<Query>();
-    private int[] shard_load = new int[App.NUM_MACHINES * App.NUM_SHARDS_PER_MACHINE + 1];
+    private int[] shard_load = new int[App.NUM_MACHINES * App.NUM_SHARDS_PER_MACHINE];
 
-    public QueryGenerator(int queries, double accessTime, double queryRate) {
+    public QueryGenerator(int queries, double accessTime, double queryRate, Boolean wrapAround) {
         NUM_QUERIES = queries;
         SHARD_ACCESS_TIME = accessTime;
         AVERAGE_QUERY_RATE = queryRate;
         NUM_SHARD_ACCESS_PER_QUERY = -1;
-        generateRandomQueries();
+        generateRandomQueries(wrapAround);
     }
 
-    public QueryGenerator(int queries, double accessTime, double queryRate, int numShards) {
+    public QueryGenerator(int queries, double accessTime, double queryRate, int numShards, Boolean wrapAround) {
         NUM_QUERIES = queries;
         SHARD_ACCESS_TIME = accessTime;
         AVERAGE_QUERY_RATE = queryRate;
         NUM_SHARD_ACCESS_PER_QUERY = numShards;
-        generateRandomQueries();
+        generateRandomQueries(wrapAround);
     }
 
-    public void generateRandomQueries() {
+    public void generateRandomQueries(Boolean wrapAround) {
         double startTime = 0;
+        int numShards = App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES;
         for (int i = 0; i < NUM_QUERIES; i++) {
             // Generate query and a random range of shards to be accessed
             Query newQuery = new Query(startTime, SHARD_ACCESS_TIME);
@@ -46,25 +46,46 @@ public class QueryGenerator {
             int shardRangeStart;
             int shardRangeEnd;
             if (NUM_SHARD_ACCESS_PER_QUERY == -1) {
-                shardRangeStart = ThreadLocalRandom.current().nextInt(1,
-                        App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1);
-                shardRangeEnd = ThreadLocalRandom.current().nextInt(shardRangeStart,
-                        App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1);
-
-            } else if (NUM_SHARD_ACCESS_PER_QUERY == App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES) { // Prevent errors when want all shards accessed
+                shardRangeStart = ThreadLocalRandom.current().nextInt(0,
+                numShards);
+                
+                if (wrapAround) {
+                    shardRangeEnd = ThreadLocalRandom.current().nextInt(0,
+                    numShards);
+                } else {
+                    shardRangeEnd = ThreadLocalRandom.current().nextInt(shardRangeStart,
+                    numShards);
+                }
+            } else if (NUM_SHARD_ACCESS_PER_QUERY == numShards) { // Prevent errors when want all shards accessed
                 shardRangeStart = 1;
-                shardRangeEnd = App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES;
+                shardRangeEnd = numShards;
             } else {
-                shardRangeStart = ThreadLocalRandom.current().nextInt(1,
-                        App.NUM_SHARDS_PER_MACHINE * App.NUM_MACHINES + 1 - NUM_SHARD_ACCESS_PER_QUERY);
-                shardRangeEnd = shardRangeStart + NUM_SHARD_ACCESS_PER_QUERY - 1;
+                if (wrapAround) {
+                    shardRangeStart = ThreadLocalRandom.current().nextInt(0,
+                    numShards);
+                } else {
+                    shardRangeStart = ThreadLocalRandom.current().nextInt(0,
+                    numShards + 1 - NUM_SHARD_ACCESS_PER_QUERY);
+                }
+
+                shardRangeEnd = (shardRangeStart + NUM_SHARD_ACCESS_PER_QUERY - 1) % numShards;
             }
 
             Vector<Integer> accessedShards = new Vector<Integer>();
-            for (int j = shardRangeStart; j <= shardRangeEnd; j++) {
+            
+            Boolean seenValue = false;
+            int j = shardRangeStart;
+            while (!seenValue) { // Since start and end is inclusive, need this implementation
                 accessedShards.add(j);
                 shard_load[j] += 1;
+
+                if (j == shardRangeEnd) {
+                    seenValue = true;
+                }
+
+                j = (j + 1) % numShards;
             }
+
             newQuery.storeShards(accessedShards);
             allQueries.add(newQuery);
 
@@ -95,7 +116,7 @@ public class QueryGenerator {
         // Output shard loads
         System.out.println("Number of accesses per shard: ");
         for (int i = 0; i < shard_load.length; i++) {
-            System.out.println("Shard " + (i + 1) + ") " + shard_load[i]);
+            System.out.println("Shard " + i + ") " + shard_load[i]);
         }
 
         PlotData.displayGraph(graphTitle, seriesName, allLatencies);

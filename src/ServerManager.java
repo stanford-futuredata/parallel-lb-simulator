@@ -1,12 +1,13 @@
 import java.util.HashMap;  
-import java.util.Optional;  
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class ServerManager {
 
     public enum ServerType {
         SEQUENTIAL,
-        ROUND_ROBIN
+        ROUND_ROBIN,
+        RANDOM
     }
 
     private final int NUM_MACHINES;
@@ -26,15 +27,16 @@ public class ServerManager {
             assignShardsSequential();
         } else if (serverConfiguration == ServerType.ROUND_ROBIN) {
             assignShardsRoundRobin();
+        } else if (serverConfiguration == ServerType.RANDOM) {
+            assignShardsRandom();
         } else {
             throw new RuntimeException("Error! Unknown server configuration");
         }
-
     }
 
     // Assign shards sequentially i.e machine 1 has shards 1, 2, 3 etc.
     private void assignShardsSequential() {
-        int currentShardId = 1;
+        int currentShardId = 0;
         shardIdToServer = new HashMap<Integer, Server>();
         for (int i = 0; i < NUM_MACHINES; i++) {
             Server newMachine = new Server(i, NUM_CORES_PER_MACHINE);
@@ -58,10 +60,30 @@ public class ServerManager {
         }
 
         for (int currentShardId = 0; currentShardId < NUM_MACHINES * SHARDS_PER_MACHINE; currentShardId++) {
-            Shard newShard = new Shard(currentShardId + 1);
+            Shard newShard = new Shard(currentShardId);
             int serverIndex = currentShardId % NUM_MACHINES;
             servers[serverIndex].insertShard(newShard);
-            shardIdToServer.put(currentShardId + 1, servers[serverIndex]);
+            shardIdToServer.put(currentShardId, servers[serverIndex]);
+        }
+    }
+
+    private void assignShardsRandom() {
+        shardIdToServer = new HashMap<Integer, Server>();
+
+        for (int i = 0; i < NUM_MACHINES; i++) {
+            Server newMachine = new Server(i, NUM_CORES_PER_MACHINE);
+            servers[i] = newMachine;
+        }
+
+        for (int currentShardId = 0; currentShardId < NUM_MACHINES * SHARDS_PER_MACHINE; currentShardId++) {
+            Shard newShard = new Shard(currentShardId);
+
+            int serverIndex = ThreadLocalRandom.current().nextInt(0, NUM_MACHINES);
+            while (servers[serverIndex].getNumShards() >= SHARDS_PER_MACHINE) {
+                serverIndex = ThreadLocalRandom.current().nextInt(0, NUM_MACHINES); // TODO: make this more efficient
+            }
+            servers[serverIndex].insertShard(newShard);
+            shardIdToServer.put(currentShardId, servers[serverIndex]);
         }
     }
 
