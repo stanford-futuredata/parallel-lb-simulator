@@ -13,9 +13,14 @@ graphTitle = None
 seriesName = None
 currentGraphData = []
 currentMachineData = {}
+
+# Variables for storing shard load
+allShardData = {}
+
+# COunt for dynamically generated figures
 currentPdfCount = 3
 
-normalizedGraph = plt.figure(1)
+shardLoadGraph = plt.figure(1)
 standardGraph = plt.figure(2)
 
 
@@ -29,10 +34,6 @@ with open('OUTPUT.txt') as f:
 				seriesName = line.strip()
 			else:
 				finalArray = np.array(currentGraphData)
-				normalisedX = finalArray / max(currentGraphData)
-
-				plt.figure(1)
-				sns.ecdfplot(normalisedX, label=seriesName)
 
 				plt.figure(2)
 				sns.ecdfplot(currentGraphData, label=seriesName)
@@ -53,6 +54,8 @@ with open('OUTPUT.txt') as f:
 				plt.hist(allData, label=labels)
 				plt.suptitle("Machine Latency: " + graphTitle)
 				plt.legend(loc='upper right')
+				plt.xlabel("Latency (unit time)")
+				plt.ylabel("Count")
 
 
 				graphTitle = line.strip()
@@ -62,18 +65,36 @@ with open('OUTPUT.txt') as f:
 				currentMachineData = {}
 
 		else:
-			value, machineId = line.strip().split(" ")
+			value, machineId, shardId = line.strip().split(" ")
+			shardId = int(shardId)
 			currentGraphData.append(float(value))
 			if machineId not in currentMachineData:
 				currentMachineData[machineId] = []
+
+			allShardData[shardId] = allShardData.get(shardId, 0) + 1
 			currentMachineData[machineId].append(float(value))
 
 # Graph final set of data
 finalArray = np.array(currentGraphData)
-normalisedX = finalArray / max(currentGraphData)
 
+# Graph shard load per shard
 plt.figure(1)
-sns.ecdfplot(normalisedX, label=seriesName)
+x_axis = []
+y_axis = []
+
+for i in range(0, max(allShardData) + 1):
+	x_axis.append(i)
+	if i in allShardData:
+		y_axis.append(allShardData[i])
+	else:
+		y_axis.append(0)
+
+sns.lineplot(x = x_axis, y = y_axis)
+plt.suptitle("Shard Load")
+plt.xlabel("Shard ID")
+plt.ylabel("Number of shard accesses")
+
+# Graph latency for each configuration
 plt.figure(2)
 sns.ecdfplot(currentGraphData, label=seriesName)
 plt.figure(currentPdfCount)
@@ -83,10 +104,12 @@ plt.suptitle("PDF: " + graphTitle)
 plt.xlabel("Latency (unit time)")
 plt.ylabel("Proportion")
 
+# Print percentiles
 print("99th Percentile of", graphTitle, ":", np.percentile(finalArray, 99))
 print("99.9th Percentile of", graphTitle, ":", np.percentile(finalArray, 99.9))
 
 
+# Print final machine load fgraph
 plt.figure(currentPdfCount)
 currentPdfCount += 1
 
@@ -95,17 +118,8 @@ labels = [i for i in currentMachineData]
 plt.hist(allData, label=labels)
 plt.suptitle("Machine Load: " + graphTitle)
 plt.legend(loc='upper right')
-
-graphTitle = None
-seriesName = None
-currentGraphData = []
-
-
-plt.figure(1)
-plt.suptitle("Normalised latency")
 plt.xlabel("Latency (unit time)")
-plt.ylabel("Proportion")
-plt.legend()
+plt.ylabel("Count")
 
 plt.figure(2)
 plt.suptitle("Latency")

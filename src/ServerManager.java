@@ -89,7 +89,7 @@ public class ServerManager {
 
     public Server getServerForShard(int shardId) {
         if (!shardIdToServer.containsKey(shardId)) {
-            throw new RuntimeException("Error! Server not found");
+            throw new RuntimeException("Error! Server not found for shard " + shardId);
         }
         return shardIdToServer.get(shardId);
     }
