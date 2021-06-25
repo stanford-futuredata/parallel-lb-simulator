@@ -25,10 +25,26 @@ public class Query {
         assignShards(); // Assign shards to new server manager
     }
 
+    // Get all shard accesses in query for a specific server
+    public Vector<ShardAccess> shardAccessesForServer(int serverId) {
+        Vector<ShardAccess> shardsForServer = new Vector<ShardAccess>();
+        for (int i = 0; i < shards.length; i++) {
+            if (manager.getServerForShard(shards[i]).MACHINE_ID == serverId) {
+                shardsForServer.add(shards[i]);
+            }
+        }
+
+        return shardsForServer;
+    }
+
     // For storing output statistics in an input vector
     public void populateLatencyVector(Vector<PlotData> latencies) {
         for (ShardAccess i : shards) {
-            PlotData newEntry = new PlotData(i.getLatency(), manager.getServerForShard(i).MACHINE_ID);
+            PlotData newEntry = new PlotData(
+                i.getLatency(), 
+                manager.getServerForShard(i).MACHINE_ID, 
+                i.getShardId()
+            );
             latencies.add(newEntry);
         }
     }

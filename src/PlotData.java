@@ -8,14 +8,16 @@ public class PlotData {
 
 	public Double value;
 	public int machineId;
+	public int shardId;
 
-	public PlotData(Double latency, int id) {
-		value = latency;
-		machineId = id;
+	public PlotData(Double latency, int machineId, int shardId) {
+		this.value = latency;
+		this.machineId = machineId;
+		this.shardId = shardId;
 	}
 
 	public String toString() {
-		return value + " " + machineId;
+		return value + " " + machineId + " " + shardId;
 	}
 
 	public static void displayGraph(String title, String seriesName, Vector<PlotData> values) throws IOException {

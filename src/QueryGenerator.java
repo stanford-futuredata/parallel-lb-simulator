@@ -1,12 +1,15 @@
 import java.io.IOException;
 import java.util.Vector;
+import java.util.TreeMap;
 import java.util.concurrent.ThreadLocalRandom;
 
 // Store queries to be enqueued on multiple different server managers
-// Assumes that all server managers have the same number of shards and machines and cores
+// Assumes the total number of shards is constant between different server managers
+
 // USAGE:
 // Create object and call generateRandomQueries(). Then assign these queries to a server manager by using assignQueries(manager)
 // Finally, you can call manager.startAllServers()
+
 public class QueryGenerator {
     // Constants for random query generation
     public final double SHARD_ACCESS_TIME;
@@ -101,7 +104,7 @@ public class QueryGenerator {
         }
     }
 
-    // Output results on all queries once completed
+    // Output results on all queries in current class once completed
     // Should only be run after manager.startAllServers() has finished
     public void outputStatistics(String graphTitle, String seriesName) throws IOException {
         Vector<PlotData> allLatencies = new Vector<PlotData>();
@@ -109,7 +112,9 @@ public class QueryGenerator {
             i.populateLatencyVector(allLatencies);
         }
 
-        System.out.println("RESULTS\n---------------------------------");
+        System.out.println("---------------------------------");
+        System.out.println("Shard load for " + seriesName);
+        System.out.println("---------------------------------");
         System.out.println("Finished running " + allQueries.size() + " queries. Displaying results for "
                 + allLatencies.size() + " shard accesses.");
 
@@ -118,10 +123,34 @@ public class QueryGenerator {
         for (int i = 0; i < shard_load.length; i++) {
             System.out.println("Shard " + i + ") " + shard_load[i]);
         }
-
+        System.out.println();
         PlotData.displayGraph(graphTitle, seriesName, allLatencies);
     }
 
+    // Output shard load for a specific machine
+    // Should only be run after manager.startAllServers() has terminated
+    public void outputShardLoadForMachine(int serverId) {
+        System.out.println("----------------------------");
+        System.out.println("Shard latency for machine " + serverId);
+        System.out.println("----------------------------");
+        // Use a tree map since low number of keys and sorted output is easier to understand
+        TreeMap<Integer, Double> totalShardLatency = new TreeMap<Integer, Double>();
+        for (Query query : allQueries) {
+            for (ShardAccess shard : query.shardAccessesForServer(serverId)) {
+                // Set total latency in hash map
+                int shardId = shard.getShardId();
+                Double currentLatency = totalShardLatency.getOrDefault(shardId, 0.0); 
+                totalShardLatency.put(shardId, currentLatency + shard.getLatency());
+            }
+        }
+
+        for (Integer shard : totalShardLatency.keySet()) {
+            System.out.println("Shard " + shard + ") " + totalShardLatency.get(shard));
+        }
+        System.out.println();
+    }
+
+    // Output statistics for a vector of queries
     public static void outputStatistics(String graphTitle, String seriesName, Vector<Query> allQueries)
             throws IOException {
         Vector<PlotData> allLatencies = new Vector<PlotData>();

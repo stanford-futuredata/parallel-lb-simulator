@@ -1,98 +1,92 @@
 import java.util.Vector;
+import java.util.Scanner;
 
 public class App {
 
     // Constants for server generation
-    public static final int NUM_MACHINES = 50;
-    public static final int NUM_CORES_PER_MACHINE = 1;
-    public static final int NUM_SHARDS_PER_MACHINE = 50;
+    public static int NUM_MACHINES;
+    public static int NUM_CORES_PER_MACHINE;
+    public static int NUM_SHARDS_PER_MACHINE;
 
     // Constants for query generation
-    public static final int NUM_QUERIES = 100000;
-    public static final int NUM_SHARD_ACCESS_PER_QUERY = 3;
-    public static final double SECONDS_PER_ACCESS = 1;
-    public static final double AVG_QUERIES_PER_SECOND = 5;
+    public static int NUM_QUERIES;
+    public static int NUM_SHARD_ACCESS_PER_QUERY;
+    public static double SECONDS_PER_ACCESS;
+    public static double AVG_QUERIES_PER_SECOND;
+    public static Boolean UNIFORM_SHARD_DISTRIBUTION;
 
     public static void main(String[] args) throws Exception {
-        QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND,
-                NUM_SHARD_ACCESS_PER_QUERY, true);
+        if (args.length != 8) {
+            System.out.println("Must supply 8 arguments to program");
+            System.out.println("Format: ./run_sim.sh NUM_MACHINES NUM_CORES_PER_MACHINE NUM_SHARDS_PER_MACHINE NUM_QUERIES NUM_SHARD_ACCESS_PER_QUERY SECONDS_PER_ACCESS AVG_QUERIES_PER_SECOND USES_UNIFORM_SHARD_DISTRIBUTION");
+            System.exit(1);
+        }
 
+        // Parse all input from command line
+        try {
+            NUM_MACHINES = Integer.parseInt(args[0]);
+            NUM_CORES_PER_MACHINE = Integer.parseInt(args[1]);
+            NUM_SHARDS_PER_MACHINE = Integer.parseInt(args[2]);
+
+            NUM_QUERIES = Integer.parseInt(args[3]);
+            NUM_SHARD_ACCESS_PER_QUERY = Integer.parseInt(args[4]);
+            SECONDS_PER_ACCESS = Double.parseDouble(args[5]);
+            AVG_QUERIES_PER_SECOND = Double.parseDouble(args[6]);
+            UNIFORM_SHARD_DISTRIBUTION = Boolean.parseBoolean(args[7]);
+        } catch (Exception e){
+            System.out.println(e);
+            System.out.println("Error in parsing command line arguments");
+            System.out.println("Format: ./run_sim.sh NUM_MACHINES NUM_CORES_PER_MACHINE NUM_SHARDS_PER_MACHINE NUM_QUERIES NUM_SHARD_ACCESS_PER_QUERY SECONDS_PER_ACCESS AVG_QUERIES_PER_SECOND USES_UNIFORM_SHARD_DISTRIBUTION");
+            System.exit(1);
+        }   
+
+        System.out.println("---------------------------");
+        System.out.println("SIMULATOR PARAMETERS");
+        System.out.println("---------------------------");
+        System.out.println("Number of machines: " + NUM_MACHINES);
+        System.out.println("Number of cores per machine: " + NUM_CORES_PER_MACHINE);
+        System.out.println("Number of shards per machine: " + NUM_SHARDS_PER_MACHINE);
+        System.out.println("Number of queries: " + NUM_QUERIES);
+        System.out.println("Number of shard accesses per query: " + NUM_SHARD_ACCESS_PER_QUERY);
+        System.out.println("Seconds for each shard access: " + SECONDS_PER_ACCESS);
+        System.out.println("Average rate of queries: " + AVG_QUERIES_PER_SECOND);
+        System.out.println("Shard accesses are uniformly distributed: " + UNIFORM_SHARD_DISTRIBUTION);
+        System.out.println();
+
+        // Generate random queries given parameters
+        QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND,
+                NUM_SHARD_ACCESS_PER_QUERY, UNIFORM_SHARD_DISTRIBUTION);
+
+
+        // Create a server manager for the round-robin configuration and assign queries to this server configuration
+        ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
+                ServerManager.ServerType.ROUND_ROBIN);
+        randomQueries.assignQueries(manager);
+        manager.startAllServers(false); // false indicates we don't output statistics everytime a shard access has finished
+        randomQueries.outputStatistics("Latency for round-robin shard storage (" + NUM_QUERIES + " x " + NUM_SHARD_ACCESS_PER_QUERY + " shard accesses).",
+                "Round Robin");
+                
+        // Create a server manager for the random configuration and assign queries to this server configuration
+        manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
+                ServerManager.ServerType.RANDOM);
+        randomQueries.assignQueries(manager);
+        manager.startAllServers(false); // false indicates we don't output statistics everytime a shard access has finished
+        randomQueries.outputStatistics("Latency for random shard storage (" + NUM_QUERIES + " x " + NUM_SHARD_ACCESS_PER_QUERY + " shard accesses).",
+                "Random");
+
+        // Commented out since sequential servers are an unrealistic lower bound
         // Generate sequential servers
-        // ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
+        // manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
         //         ServerManager.ServerType.SEQUENTIAL);
         // randomQueries.assignQueries(manager);
         // manager.startAllServers(false);
         // randomQueries.outputStatistics("Latency for sequential shard storage (20,000 x random shard accesses).",
         //         "Sequential");
-
-        ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-                ServerManager.ServerType.ROUND_ROBIN);
-        randomQueries.assignQueries(manager);
-        manager.startAllServers(false);
-        randomQueries.outputStatistics("Latency for round-robin shard storage (100,000 x 3 shard accesses).",
-                "Round Robin");
-                
-
-        manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-                ServerManager.ServerType.RANDOM);
-        randomQueries.assignQueries(manager);
-        manager.startAllServers(false);
-        randomQueries.outputStatistics("Latency for random shard storage (100000 x 3 shard accesses).",
-                "Random");
-
-
-        // Generate sequential servers
-        // randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND,
-        //         27);
-        // manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-        //         ServerManager.ServerType.SEQUENTIAL);
-        // randomQueries.assignQueries(manager);
-        // manager.startAllServers(false);
-        // randomQueries.outputStatistics("Latency for sequential shard storage with (5000 x 27 shard accesses).",
-        //         "27");
-
-
-        // randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND,
-        //         29);
-        // manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-        //         ServerManager.ServerType.SEQUENTIAL);
-        // randomQueries.assignQueries(manager);
-        // manager.startAllServers(false);
-        // randomQueries.outputStatistics("Latency for sequential shard storage with (5000 x 29 shard accesses).",
-        //         "29");
-
-        // randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS, AVG_QUERIES_PER_SECOND,
-        //         31);
-        // manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-        //         ServerManager.ServerType.SEQUENTIAL);
-        // randomQueries.assignQueries(manager);
-        // manager.startAllServers(false);
-        // randomQueries.outputStatistics("Latency for sequential shard storage with (5000 x 31 shard accesses).",
-        //         "31");
-
-
-        // randomQueries = new QueryGenerator(50, SECONDS_PER_ACCESS,
-        // AVG_QUERIES_PER_SECOND);
-        // manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE,
-        // NUM_CORES_PER_MACHINE,
-        // ServerManager.ServerType.SEQUENTIAL);
-        // randomQueries.assignQueries(manager);
-        // manager.startAllServers(false);
-        // randomQueries.outputStatistics("Latency for sequential shard storage 50.",
-        // "Sequential 50");
-
-        // Generate round-robin servers
-        // manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE,
-        // NUM_CORES_PER_MACHINE,
-        // ServerManager.ServerType.ROUND_ROBIN);
-        // randomQueries.assignQueries(manager);
-        // manager.startAllServers(false);
-        // randomQueries.outputStatistics("Latency for round-robin shard storage with
-        // (50,000 x 100 shard accesses).",
-        // "Round-robin Storage");
     }
 
-    // TESTCASES
+    // TESTCASES (call functions to activate unit tests)
+    // NOTE: Some of these may fail at the graph plotting stage. These are for testing the simulator rather than the grapher 
+    //       so focus on the simulator output rather than the Python graph errors
 
     // 1) Simultaneous accesses on single-core machine should be sequential
     public static void serialQueries() throws Exception {
@@ -101,11 +95,11 @@ public class App {
         ServerManager manager = new ServerManager(1, /* numShards */ 5, /* numCores */ 1,
                 ServerManager.ServerType.SEQUENTIAL); // Create 1 server with 5 shards and 1 core
         Query newQuery = new Query(0, manager, 1f);
-        newQuery.assignShards(1, 2, 3);
+        newQuery.assignShards(0, 1, 2);
         allQueries.add(newQuery);
 
         newQuery = new Query(0, manager, 1f);
-        newQuery.assignShards(4, 5);
+        newQuery.assignShards(3, 4);
         allQueries.add(newQuery);
 
         manager.startAllServers();
@@ -120,11 +114,11 @@ public class App {
         ServerManager manager = new ServerManager(1, 5, 1, ServerManager.ServerType.SEQUENTIAL); // Create 1 server with
                                                                                                  // 5 shards and 1 core
         Query newQuery = new Query(0, manager, 2.5f);
-        newQuery.assignShards(1, 2, 3);
+        newQuery.assignShards(0, 1, 2);
         allQueries.add(newQuery);
 
         newQuery = new Query(0, manager, 1.5f);
-        newQuery.assignShards(3, 4, 5);
+        newQuery.assignShards(2, 3, 4);
         allQueries.add(newQuery);
 
         manager.startAllServers();
@@ -137,7 +131,7 @@ public class App {
         ServerManager manager = new ServerManager(1, 5, 5, ServerManager.ServerType.SEQUENTIAL); // Create 1 server with
                                                                                                  // 5 shards and 1 core
         Query newQuery = new Query(0, manager, 2.5f);
-        newQuery.assignShards(1, 2, 3, 4, 5);
+        newQuery.assignShards(0, 1, 2, 3, 4);
         manager.startAllServers();
     }
 
@@ -147,7 +141,7 @@ public class App {
         ServerManager manager = new ServerManager(1, 5, 5, ServerManager.ServerType.SEQUENTIAL); // Create 1 server with
                                                                                                  // 5 shards and 1 core
         Query newQuery = new Query(0, manager, 2.5f);
-        newQuery.assignShards(1, 2, 3, 4, 5, 5);
+        newQuery.assignShards(0, 1, 2, 3, 4, 4);
         manager.startAllServers();
     }
 

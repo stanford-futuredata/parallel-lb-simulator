@@ -30,7 +30,7 @@ javac *.java
 
 echo "Running Java program."
 
-java App
+java App ${@:1}
 
 echo "Plotting results."
 
