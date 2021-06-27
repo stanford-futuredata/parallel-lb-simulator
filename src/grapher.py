@@ -185,7 +185,7 @@ plt.legend()
 
 plt.show(block = False)
 
-print("\nQuery machines for random")
+print("\nFind assigned shards for machine in random-shard configuration")
 while True:
 	machineId = input("Enter a machine id: ")
 	print(sorted(shardsForMachine.get(machineId, None)))
