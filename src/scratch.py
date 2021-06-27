@@ -36,5 +36,9 @@ with open("src/OUTPUT.txt", "r") as f:
 			stats = line
 
 all_vals.sort()
-for i in range(20):
+i = 0
+while all_vals[i][0] < 0.1:
 	print(all_vals[i])
+	i += 1
+
+print(i)
