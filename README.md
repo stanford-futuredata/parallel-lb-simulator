@@ -70,3 +70,5 @@ To play around with how shard-load varies by the total number of shards (n), you
 The other distribution is a uniform shard distribution. This is created by allowing queries to wrap around the total number of shards. For example, if we have 10 shards, both 4-8 and 8-2 are valid shard access ranges. Every shard is equally likely to be accessed with this distribution. You can use this distribution by setting the argument to **true**.
 
 
+**Interesting Graphs**
+The most promising results are for the following simulator run: ```./run_sim.sh 15 3 10 25000 20 1 2 false```
