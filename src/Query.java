@@ -1,3 +1,11 @@
+//*******************************************************************
+//  Query.java
+//
+// Wrapper class for a single query. A query is defined as a consecutive
+// range of shard accesses at a given start time. Object takes in which
+// ServerManager query is assigned to so that it can be assigned to 
+// the correct shard objects.
+//*******************************************************************
 import java.util.Vector;  
 
 // Wrapper class for all shard access objects

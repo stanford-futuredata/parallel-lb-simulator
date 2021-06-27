@@ -1,3 +1,9 @@
+//*******************************************************************
+//  ShardAccess.java
+//
+// Object to access a single shard on a query.
+//*******************************************************************
+
 public class ShardAccess {
     private int shardId;
     private double length;
