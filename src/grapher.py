@@ -80,7 +80,7 @@ with open('OUTPUT.txt') as f:
 					else:
 						y_axis.append(0)
 
-				sns.lineplot(x = x_axis, y = y_axis)
+				sns.scatterplot(x = x_axis, y = y_axis)
 				plt.ylim(ymin = 0)
 				plt.suptitle("Total Shard Latency for " + seriesName)
 				plt.xlabel("Shard ID")
@@ -123,7 +123,7 @@ for i in range(0, max(allShardAccesses) + 1):
 	else:
 		y_axis.append(0)
 
-sns.lineplot(x = x_axis, y = y_axis)
+sns.scatterplot(x = x_axis, y = y_axis)
 plt.ylim(ymin = 0)
 plt.suptitle("Number of requests per shard")
 plt.xlabel("Shard ID")
@@ -141,7 +141,7 @@ for i in range(0, max(allShardLatencies) + 1):
 	else:
 		y_axis.append(0)
 
-sns.lineplot(x = x_axis, y = y_axis)
+sns.scatterplot(x = x_axis, y = y_axis)
 plt.ylim(ymin = 0)
 plt.suptitle("Total Shard Latency for " + seriesName)
 plt.xlabel("Shard ID")
