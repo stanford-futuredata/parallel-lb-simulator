@@ -13,7 +13,7 @@ pip3 install matplotlib
 
 **Running the simulator**
 
-There is a shell script in the project which compiles, runs, and displays the results of the simulator. This shell script can be run with the following command:
+You will first need to clone the repo. There is a shell script at the root folder of the project which compiles, runs, and displays the results of the simulator. This shell script can be run with the following command:
 ```./run_sim.sh NUM_MACHINES NUM_CORES_PER_MACHINE NUM_SHARDS_PER_MACHINE NUM_QUERIES NUM_SHARD_ACCESS_PER_QUERY SECONDS_PER_ACCESS AVG_QUERIES_PER_SECOND USES_UNIFORM_SHARD_DISTRIBUTION```. An explanation for each of these parameters can be found below. An example run of the simulator would be:
 ```./run_sim.sh 15 3 10 10000 40 1 1 false```. This results in a run of the simulator with the following output:
 ```
