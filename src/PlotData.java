@@ -1,3 +1,4 @@
+
 //*******************************************************************
 //  PlotData.java
 //
@@ -9,9 +10,7 @@ import java.util.Vector;
 import java.io.*;
 import java.util.Collections;
 
-public class PlotData implements Comparable<PlotData>{
-
-	private static final String FILE_NAME = "OUTPUT.txt";
+public class PlotData implements Comparable<PlotData> {
 
 	public Double value;
 	public int machineId;
@@ -24,30 +23,30 @@ public class PlotData implements Comparable<PlotData>{
 	}
 
 	@Override
-    public int compareTo(PlotData other){
-        // compareTo should return < 0 if this is supposed to be
-        // less than other, > 0 if this is supposed to be greater than 
-        // other and 0 if they are supposed to be equal
+	public int compareTo(PlotData other) {
+		// compareTo should return < 0 if this is supposed to be
+		// less than other, > 0 if this is supposed to be greater than
+		// other and 0 if they are supposed to be equal
 		if (this.value < other.value) {
 			return -1;
 		} else if (this.value > other.value) {
 			return 1;
 		}
 		return 0;
-    }
+	}
 
 	public String toString() {
 		return value + " " + machineId + " " + shardId;
 	}
 
-	public static void displayGraph(String title, String seriesName, Vector<PlotData> values) throws IOException {
-	    FileWriter fw = new FileWriter(FILE_NAME,true); 
+	public static void displayGraph(String title, String seriesName, Vector<PlotData> values, FileWriter fw)
+			throws IOException {
 
 		if (seriesName != "Random") {
 			fw.write(title + "\n");
 		}
 
-	    fw.write(seriesName + " ");
+		fw.write(seriesName + " ");
 		Collections.sort(values);
 
 		int percentile_999th = (int) Math.ceil(99.9 / 100.0 * values.size());
@@ -55,6 +54,5 @@ public class PlotData implements Comparable<PlotData>{
 		if (seriesName == "Random") {
 			fw.write("\n");
 		}
-		fw.close();
 	}
 }

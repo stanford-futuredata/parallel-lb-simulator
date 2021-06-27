@@ -16,8 +16,9 @@
 import java.io.IOException;
 import java.util.Vector;
 import java.util.TreeMap;
-import java.util.concurrent.ThreadLocalRandom;
+import java.io.*;
 
+import java.util.concurrent.ThreadLocalRandom;
 
 public class QueryGenerator {
     // Constants for random query generation
@@ -58,30 +59,26 @@ public class QueryGenerator {
             int shardRangeStart;
             int shardRangeEnd;
             if (NUM_SHARD_ACCESS_PER_QUERY == -1) {
-                shardRangeStart = ThreadLocalRandom.current().nextInt(0,
-                numShards);
-                
+                shardRangeStart = ThreadLocalRandom.current().nextInt(0, numShards);
+
                 if (wrapAround) {
-                    shardRangeEnd = ThreadLocalRandom.current().nextInt(0,
-                    numShards);
+                    shardRangeEnd = ThreadLocalRandom.current().nextInt(0, numShards);
                 } else {
-                    shardRangeEnd = ThreadLocalRandom.current().nextInt(shardRangeStart,
-                    numShards);
+                    shardRangeEnd = ThreadLocalRandom.current().nextInt(shardRangeStart, numShards);
                 }
             } else {
                 if (wrapAround) {
-                    shardRangeStart = ThreadLocalRandom.current().nextInt(0,
-                    numShards);
+                    shardRangeStart = ThreadLocalRandom.current().nextInt(0, numShards);
                 } else {
                     shardRangeStart = ThreadLocalRandom.current().nextInt(0,
-                    numShards + 1 - NUM_SHARD_ACCESS_PER_QUERY);
+                            numShards + 1 - NUM_SHARD_ACCESS_PER_QUERY);
                 }
 
                 shardRangeEnd = (shardRangeStart + NUM_SHARD_ACCESS_PER_QUERY - 1) % numShards;
             }
 
             Vector<Integer> accessedShards = new Vector<Integer>();
-            
+
             Boolean seenValue = false;
             int j = shardRangeStart;
             while (!seenValue) { // Since start and end is inclusive, need this implementation
@@ -112,7 +109,7 @@ public class QueryGenerator {
 
     // Output results on all queries in current class once completed
     // Should only be run after manager.startAllServers() has finished
-    public void outputStatistics(String graphTitle, String seriesName) throws IOException {
+    public void outputStatistics(String graphTitle, String seriesName, FileWriter fw) throws IOException {
         Vector<PlotData> allLatencies = new Vector<PlotData>();
         for (Query i : allQueries) {
             i.populateLatencyVector(allLatencies);
@@ -129,11 +126,11 @@ public class QueryGenerator {
         // Output shard loads
         // System.out.println("Number of accesses per shard: ");
         // for (int i = 0; i < shard_load.length; i++) {
-        //     System.out.println("Shard " + i + ") " + shard_load[i]);
+        // System.out.println("Shard " + i + ") " + shard_load[i]);
         // }
         // System.out.println();
 
-        PlotData.displayGraph(graphTitle, seriesName, allLatencies);
+        PlotData.displayGraph(graphTitle, seriesName, allLatencies, fw);
     }
 
     // Output shard load for a specific machine
@@ -142,13 +139,14 @@ public class QueryGenerator {
         System.out.println("----------------------------");
         System.out.println("Shard latency for machine " + serverId);
         System.out.println("----------------------------");
-        // Use a tree map since low number of keys and sorted output is easier to understand
+        // Use a tree map since low number of keys and sorted output is easier to
+        // understand
         TreeMap<Integer, Double> totalShardLatency = new TreeMap<Integer, Double>();
         for (Query query : allQueries) {
             for (ShardAccess shard : query.shardAccessesForServer(serverId)) {
                 // Set total latency in hash map
                 int shardId = shard.getShardId();
-                Double currentLatency = totalShardLatency.getOrDefault(shardId, 0.0); 
+                Double currentLatency = totalShardLatency.getOrDefault(shardId, 0.0);
                 totalShardLatency.put(shardId, currentLatency + shard.getLatency());
             }
         }
@@ -160,7 +158,7 @@ public class QueryGenerator {
     }
 
     // Output statistics for a vector of queries
-    public static void outputStatistics(String graphTitle, String seriesName, Vector<Query> allQueries)
+    public static void outputStatistics(String graphTitle, String seriesName, Vector<Query> allQueries, FileWriter fw)
             throws IOException {
         Vector<PlotData> allLatencies = new Vector<PlotData>();
 
@@ -168,7 +166,7 @@ public class QueryGenerator {
             i.populateLatencyVector(allLatencies);
         }
 
-        PlotData.displayGraph(graphTitle, seriesName, allLatencies);
+        PlotData.displayGraph(graphTitle, seriesName, allLatencies, fw);
     }
 
     public String toString() {
