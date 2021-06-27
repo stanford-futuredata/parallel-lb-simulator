@@ -61,9 +61,9 @@ This parameter represents the average number of queries that occur each second. 
 **USES_UNIFORM_SHARD_DISTRIBUTION:**
 The query generator can generate shard accesses based around two different distributions. 
 
-One distribution is a non-uniform shard distribution which means that queries cannot wrap around the total number of shards. For example, if we have 10 shards, we would be able to access shards 4-8 and 8-10 but not 9-2. This results in a shard-load distribution as below:
+One distribution is a non-uniform shard distribution which means that queries cannot wrap around the total number of shards. For example, if we have 100 shards, we would be able to access shards 40-80 and 80-100 but not 90-20. This results in a shard-load distribution as below (for n=100):
 
-![image](https://user-images.githubusercontent.com/7289955/123534432-06c54580-d6d2-11eb-8037-92b1ff1cf11b.png)
+![image](https://user-images.githubusercontent.com/7289955/123534648-65d78a00-d6d3-11eb-954b-4a0c074e8064.png)
 
 To play around with how shard-load varies by the total number of shards (n), you can play around with this graph https://www.desmos.com/calculator/oxbblcd84q. To run a simulation with this shard distribution, set the argument to **false**.
 
