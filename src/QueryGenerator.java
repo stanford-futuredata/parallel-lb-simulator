@@ -1,14 +1,23 @@
+//*******************************************************************
+//  QueryGenerator.java
+//
+// Generates random queries given a set of constants (see constructor).
+// Assumes the total number of shards is constant between different 
+// server managers. It is possible to reuse the same QueryGenerator
+// object across multiple server managers with the assignQueries()
+// function. 
+//
+// USAGE:
+// Create object and call generateRandomQueries(). Then assign these 
+// queries to a server manager by using assignQueries(manager).
+// Finally, you can call manager.startAllServers()
+//*******************************************************************
+
 import java.io.IOException;
 import java.util.Vector;
 import java.util.TreeMap;
 import java.util.concurrent.ThreadLocalRandom;
 
-// Store queries to be enqueued on multiple different server managers
-// Assumes the total number of shards is constant between different server managers
-
-// USAGE:
-// Create object and call generateRandomQueries(). Then assign these queries to a server manager by using assignQueries(manager)
-// Finally, you can call manager.startAllServers()
 
 public class QueryGenerator {
     // Constants for random query generation
@@ -59,9 +68,6 @@ public class QueryGenerator {
                     shardRangeEnd = ThreadLocalRandom.current().nextInt(shardRangeStart,
                     numShards);
                 }
-            } else if (NUM_SHARD_ACCESS_PER_QUERY == numShards) { // Prevent errors when want all shards accessed
-                shardRangeStart = 1;
-                shardRangeEnd = numShards;
             } else {
                 if (wrapAround) {
                     shardRangeStart = ThreadLocalRandom.current().nextInt(0,
@@ -112,18 +118,21 @@ public class QueryGenerator {
             i.populateLatencyVector(allLatencies);
         }
 
-        System.out.println("---------------------------------");
-        System.out.println("Shard load for " + seriesName);
-        System.out.println("---------------------------------");
+        // Commented out shard-load data
+        // System.out.println("---------------------------------");
+        // System.out.println("Shard load for " + seriesName);
+        // System.out.println("---------------------------------");
+
         System.out.println("Finished running " + allQueries.size() + " queries. Displaying results for "
                 + allLatencies.size() + " shard accesses.");
 
         // Output shard loads
-        System.out.println("Number of accesses per shard: ");
-        for (int i = 0; i < shard_load.length; i++) {
-            System.out.println("Shard " + i + ") " + shard_load[i]);
-        }
-        System.out.println();
+        // System.out.println("Number of accesses per shard: ");
+        // for (int i = 0; i < shard_load.length; i++) {
+        //     System.out.println("Shard " + i + ") " + shard_load[i]);
+        // }
+        // System.out.println();
+
         PlotData.displayGraph(graphTitle, seriesName, allLatencies);
     }
 

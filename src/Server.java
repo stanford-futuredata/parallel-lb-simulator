@@ -1,3 +1,19 @@
+//*******************************************************************
+//  Server.java
+//
+// Manages computation for a single server and runs simulation.
+// Algorithm for running simulation on a single machine:
+//     1) Enqueue all shard accesses to relevant shards (see Shard.java)
+//     2) For every core on machine, run the soonest query in all free shards
+//     3) While there are shard accesses left to process:
+//          a) Find shard access with soonest end date from busy shards
+//          b) Mark shard as free and set current time as this task's 
+//             end time
+//          c) Find shard access with soonest start-time from all 
+//             free shards
+//          d) Assign shard access to shard and mark shard as busy
+//*******************************************************************
+
 import java.lang.Math;  
 import java.util.HashMap;  
 import java.util.Optional;
@@ -8,7 +24,6 @@ public class Server {
     private final int NUM_CORES;
     private HashMap<Integer, Shard> idToShard;
     private double prevEndTime = 0; // double to store end time of previous task
-    private Boolean exhaustedProcesses = false;
 
     public Server(int id, int cores) {
         MACHINE_ID = id;

@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+'''
+grapher.py
+
+Reads in the OUTPUT.txt file and graphs results.
+Primarily scratch-work for data visualisation so file is rather messy...
+'''
+
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -15,7 +22,10 @@ currentGraphData = []
 currentMachineData = {}
 
 # Variables for storing shard load
-allShardData = {}
+allShardAccesses = {}
+allShardLatencies = {}
+shardsForMachine = {}
+
 
 # COunt for dynamically generated figures
 currentPdfCount = 3
@@ -46,6 +56,7 @@ with open('OUTPUT.txt') as f:
 				plt.figure(currentPdfCount)
 				currentPdfCount += 1
 
+				print("50th Percentile of", graphTitle, ":", np.percentile(finalArray, 50))
 				print("99th Percentile of", graphTitle, ":", np.percentile(finalArray, 99))
 				print("99.9th Percentile of", graphTitle, ":", np.percentile(finalArray, 99.9))
 
@@ -57,46 +68,90 @@ with open('OUTPUT.txt') as f:
 				plt.xlabel("Latency (unit time)")
 				plt.ylabel("Count")
 
+				# Graph total shard latency for current configuration
+				plt.figure(currentPdfCount)
+				currentPdfCount += 1
+				x_axis = []
+				y_axis = []
+				for i in range(0, max(allShardLatencies) + 1):
+					x_axis.append(i)
+					if i in allShardLatencies:
+						y_axis.append(allShardLatencies[i])
+					else:
+						y_axis.append(0)
+
+				sns.lineplot(x = x_axis, y = y_axis)
+				plt.ylim(ymin = 0)
+				plt.suptitle("Total Shard Latency for " + seriesName)
+				plt.xlabel("Shard ID")
+				plt.ylabel("Total Shard Latency (unit time)")
 
 				graphTitle = line.strip()
 				print("Reading data for", graphTitle)
 				seriesName = None
 				currentGraphData = []
 				currentMachineData = {}
+				allShardAccesses = {}
+				allShardLatencies = {}
 
 		else:
-			value, machineId, shardId = line.strip().split(" ")
+			latency, machineId, shardId = line.strip().split(" ")
 			shardId = int(shardId)
-			currentGraphData.append(float(value))
+			latency = float(latency)
+			currentGraphData.append(latency)
 			if machineId not in currentMachineData:
 				currentMachineData[machineId] = []
+				shardsForMachine[machineId] = set()
 
-			allShardData[shardId] = allShardData.get(shardId, 0) + 1
-			currentMachineData[machineId].append(float(value))
+			shardsForMachine[machineId].add(shardId)
+			allShardAccesses[shardId] = allShardAccesses.get(shardId, 0) + 1
+			allShardLatencies[shardId] = allShardLatencies.get(shardId, 0) + latency
+			currentMachineData[machineId].append(latency)
 
 # Graph final set of data
 finalArray = np.array(currentGraphData)
 
-# Graph shard load per shard
+# Graph shard accesses per shard
 plt.figure(1)
 x_axis = []
 y_axis = []
 
-for i in range(0, max(allShardData) + 1):
+for i in range(0, max(allShardAccesses) + 1):
 	x_axis.append(i)
-	if i in allShardData:
-		y_axis.append(allShardData[i])
+	if i in allShardAccesses:
+		y_axis.append(allShardAccesses[i])
 	else:
 		y_axis.append(0)
 
 sns.lineplot(x = x_axis, y = y_axis)
-plt.suptitle("Shard Load")
+plt.ylim(ymin = 0)
+plt.suptitle("Number of requests per shard")
 plt.xlabel("Shard ID")
 plt.ylabel("Number of shard accesses")
+
+# Graph total shard latency for current configuration
+plt.figure(currentPdfCount)
+currentPdfCount += 1
+x_axis = []
+y_axis = []
+for i in range(0, max(allShardLatencies) + 1):
+	x_axis.append(i)
+	if i in allShardLatencies:
+		y_axis.append(allShardLatencies[i])
+	else:
+		y_axis.append(0)
+
+sns.lineplot(x = x_axis, y = y_axis)
+plt.ylim(ymin = 0)
+plt.suptitle("Total Shard Latency for " + seriesName)
+plt.xlabel("Shard ID")
+plt.ylabel("Total Shard Latency (unit time)")
+
 
 # Graph latency for each configuration
 plt.figure(2)
 sns.ecdfplot(currentGraphData, label=seriesName)
+
 plt.figure(currentPdfCount)
 currentPdfCount += 1
 sns.histplot(currentGraphData)
@@ -105,6 +160,7 @@ plt.xlabel("Latency (unit time)")
 plt.ylabel("Proportion")
 
 # Print percentiles
+print("50th Percentile of", graphTitle, ":", np.percentile(finalArray, 50))
 print("99th Percentile of", graphTitle, ":", np.percentile(finalArray, 99))
 print("99.9th Percentile of", graphTitle, ":", np.percentile(finalArray, 99.9))
 
@@ -127,5 +183,9 @@ plt.xlabel("Latency (unit time)")
 plt.ylabel("Count")
 plt.legend()
 
+plt.show(block = False)
 
-plt.show()
+print("\nQuery machines for random")
+while True:
+	machineId = input("Enter a machine id: ")
+	print(sorted(shardsForMachine.get(machineId, None)))

@@ -1,6 +1,14 @@
+//*******************************************************************
+//  ServerManager.java
+//
+// Manages computation for multiple servers and handles shard 
+// assignment. Allows for 3 different configurations of servers 
+// depending on the serverConfiguration argument passed to the 
+// constructor.
+//*******************************************************************
+
 import java.util.HashMap;  
 import java.util.concurrent.ThreadLocalRandom;
-
 
 public class ServerManager {
 

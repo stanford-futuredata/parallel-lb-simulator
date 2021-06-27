@@ -1,3 +1,10 @@
+//*******************************************************************
+//  Shard.java
+//
+// Manages computation and shard accesses for a single shard. Stores
+// all pending shard accesses in a deque for quick inserts/pops.
+//*******************************************************************
+
 import java.util.Deque;  
 import java.util.ArrayDeque;  
 import java.util.Optional;
@@ -46,6 +53,8 @@ public class Shard {
         return requests.size();
     }
 
+    // IMPORTANT: assumes any enqueued ShardAccess has a start time >=
+    //            all previous ShardAccesses enqueued
     public void enqueueAccess(ShardAccess access) {
         requests.addLast(access);
     }

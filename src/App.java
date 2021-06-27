@@ -1,5 +1,13 @@
+//*******************************************************************
+//  App.java
+//
+// The main entry point for the simulator. Parses user input from 
+// command line and runs a simulation for both a round-robin and 
+// random server configuration (the sequential configuration is 
+// commented out). To run, call ./run_sim.sh with relevant args.
+//*******************************************************************
+
 import java.util.Vector;
-import java.util.Scanner;
 
 public class App {
 
