@@ -25,6 +25,8 @@ currentMachineData = {}
 allShardAccesses = {}
 allShardLatencies = {}
 shardsForMachine = {}
+prevLatency = None
+allShardsSiml = {}
 
 
 # COunt for dynamically generated figures
@@ -93,6 +95,8 @@ with open('OUTPUT.txt') as f:
 				currentMachineData = {}
 				allShardAccesses = {}
 				allShardLatencies = {}
+				allShardsSiml = {}
+				prevIds = []
 
 		else:
 			latency, machineId, shardId = line.strip().split(" ")
@@ -107,6 +111,22 @@ with open('OUTPUT.txt') as f:
 			allShardAccesses[shardId] = allShardAccesses.get(shardId, 0) + 1
 			allShardLatencies[shardId] = allShardLatencies.get(shardId, 0) + latency
 			currentMachineData[machineId].append(latency)
+
+			if latency == prevLatency:
+				if shardId not in allShardsSiml:
+					allShardsSiml[shardId] = {}
+				for i in prevIds:
+					allShardsSiml[shardId][i] = allShardsSiml[shardId].get(i, 0) + 1
+
+					if i not in allShardsSiml:
+						allShardsSiml[i] = {}
+
+					allShardsSiml[i][shardId] = allShardsSiml[i].get(shardId, 0) + 1
+			else:
+				prevIds = []
+
+			prevLatency = latency
+			prevIds.append(shardId)
 
 # Graph final set of data
 finalArray = np.array(currentGraphData)
@@ -188,4 +208,14 @@ plt.show(block = False)
 print("\nFind assigned shards for machine in random-shard configuration")
 while True:
 	machineId = input("Enter a machine id: ")
+	total = 0
 	print(sorted(shardsForMachine.get(machineId, None)))
+	asd = []
+	for i in shardsForMachine.get(machineId, None):
+		total += allShardAccesses[i]
+		for x in allShardsSiml.get(i, []):
+			if x in shardsForMachine.get(machineId, None) and allShardsSiml[i][x] > 20:
+				print(i,"accessed with",x,"this many times:",allShardsSiml[i][x]) 
+		asd.append((i, allShardAccesses[i]))
+	print("Total accesses for machine:",asd)
+
