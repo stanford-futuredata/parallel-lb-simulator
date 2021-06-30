@@ -67,6 +67,9 @@ public class Server {
 
     private Optional<ShardAccess> findNextProcessToTerminate() {
         // Find soonest query on occupied shard to stop
+        
+        // TODO: throw assert to see num cores == num shards
+
         Optional<ShardAccess> nextTask = Optional.empty();
         for (Shard shard : idToShard.values()) {
             if (shard.getIsBusy()) {
