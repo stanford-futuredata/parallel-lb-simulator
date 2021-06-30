@@ -13,73 +13,62 @@ import java.io.*;
 public class App {
 
     // Constants for server generation
-    public static int NUM_MACHINES;
-    public static int NUM_CORES_PER_MACHINE;
+    public static int NUM_MACHINES = 200;
+    public static int NUM_CORES_PER_MACHINE = 2;
     public static int NUM_SHARDS_PER_MACHINE;
 
     // Constants for query generation
-    public static int NUM_QUERIES;
-    public static int NUM_SHARD_ACCESS_PER_QUERY;
+    public static int NUM_QUERIES = 20000;
+    public static int NUM_SHARD_ACCESS_PER_QUERY = 200; 
     public static double SECONDS_PER_ACCESS = 1;
     public static double AVG_QUERIES_PER_SECOND = 2;
-    public static Boolean UNIFORM_SHARD_DISTRIBUTION;
+    public static Boolean UNIFORM_SHARD_DISTRIBUTION = true;
 
     public static void main(String[] args) throws Exception {
-        int totalNumShardAccesses = 1000000;
-        UNIFORM_SHARD_DISTRIBUTION = false;
-        FileWriter fw = new FileWriter("OUTPUT.txt", true);
+        FileWriter fw = new FileWriter("testing.txt", true);
+        int overall = 3000000;
 
-        for (int machines = 2; machines < 50; machines += 10) {
-            for (int shards = 1; shards < 50; shards += 10) {
-                for (int cores = 1; cores < shards; cores += 5) {
-                    for (int shard = 1; shard < machines * shards; shard += 20) {
-                        NUM_MACHINES = machines;
-                        NUM_CORES_PER_MACHINE = cores;
-                        NUM_SHARDS_PER_MACHINE = shards;
+        for (int shards = 20; shards <= 500; shards += 20) {
+            NUM_SHARDS_PER_MACHINE = shards;
+            NUM_QUERIES = overall / NUM_SHARD_ACCESS_PER_QUERY;
 
-                        NUM_SHARD_ACCESS_PER_QUERY = shard;
-                        NUM_QUERIES = totalNumShardAccesses / NUM_SHARD_ACCESS_PER_QUERY;
+            System.out.println("---------------------------");
+            System.out.println("SIMULATOR PARAMETERS");
+            System.out.println("---------------------------");
+            System.out.println("Number of machines: " + NUM_MACHINES);
+            System.out.println("Number of cores per machine: " + NUM_CORES_PER_MACHINE);
+            System.out.println("Number of shards per machine: " + NUM_SHARDS_PER_MACHINE);
+            System.out.println("Number of queries: " + NUM_QUERIES);
+            System.out.println("Number of shard accesses per query: " + NUM_SHARD_ACCESS_PER_QUERY);
+            System.out.println("Seconds for each shard access: " + SECONDS_PER_ACCESS);
+            System.out.println("Average rate of queries: " + AVG_QUERIES_PER_SECOND);
+            System.out.println("Shard accesses are uniformly distributed: " + UNIFORM_SHARD_DISTRIBUTION);
+            System.out.println();
 
-                        System.out.println("---------------------------");
-                        System.out.println("SIMULATOR PARAMETERS");
-                        System.out.println("---------------------------");
-                        System.out.println("Number of machines: " + NUM_MACHINES);
-                        System.out.println("Number of cores per machine: " + NUM_CORES_PER_MACHINE);
-                        System.out.println("Number of shards per machine: " + NUM_SHARDS_PER_MACHINE);
-                        System.out.println("Number of queries: " + NUM_QUERIES);
-                        System.out.println("Number of shard accesses per query: " + NUM_SHARD_ACCESS_PER_QUERY);
-                        System.out.println("Seconds for each shard access: " + SECONDS_PER_ACCESS);
-                        System.out.println("Average rate of queries: " + AVG_QUERIES_PER_SECOND);
-                        System.out.println("Shard accesses are uniformly distributed: " + UNIFORM_SHARD_DISTRIBUTION);
-                        System.out.println();
+            // Generate random queries given parameters
+            QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS,
+                    AVG_QUERIES_PER_SECOND, NUM_SHARD_ACCESS_PER_QUERY, UNIFORM_SHARD_DISTRIBUTION);
 
-                        // Generate random queries given parameters
-                        QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS,
-                                AVG_QUERIES_PER_SECOND, NUM_SHARD_ACCESS_PER_QUERY, UNIFORM_SHARD_DISTRIBUTION);
+            // Create a server manager for the round-robin configuration and assign queries
+            // to this server configuration
+            ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE,
+                    NUM_CORES_PER_MACHINE, ServerManager.ServerType.ROUND_ROBIN);
+            randomQueries.assignQueries(manager);
+            manager.startAllServers(false); // false indicates we don't output statistics everytime
+                                            // a shard access has finished
+            randomQueries.outputStatistics(NUM_MACHINES + ", " + NUM_CORES_PER_MACHINE + ", "
+                    + NUM_SHARDS_PER_MACHINE + ", " + NUM_QUERIES + ", " + NUM_SHARD_ACCESS_PER_QUERY + ", "
+                    + SECONDS_PER_ACCESS + ", " + AVG_QUERIES_PER_SECOND, "Round-Robin", fw);
 
-                        // Create a server manager for the round-robin configuration and assign queries
-                        // to this server configuration
-                        ServerManager manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE,
-                                NUM_CORES_PER_MACHINE, ServerManager.ServerType.ROUND_ROBIN);
-                        randomQueries.assignQueries(manager);
-                        manager.startAllServers(false); // false indicates we don't output statistics everytime
-                                                        // a shard access has finished
-                        randomQueries.outputStatistics(NUM_MACHINES + ", " + NUM_CORES_PER_MACHINE + ", "
-                                + NUM_SHARDS_PER_MACHINE + ", " + NUM_QUERIES + ", " + NUM_SHARD_ACCESS_PER_QUERY + ", "
-                                + SECONDS_PER_ACCESS + ", " + AVG_QUERIES_PER_SECOND, "Round-Robin", fw);
-
-                        // Create a server manager for the random configuration and assign queries to
-                        // this server configuration
-                        manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
-                                ServerManager.ServerType.RANDOM);
-                        randomQueries.assignQueries(manager);
-                        manager.startAllServers(false); // false indicates we don't output statistics everytime
-                                                        // a shard access has finished
-                        randomQueries.outputStatistics("", "Random", fw);
-                        System.out.println();
-                    }
-                }
-            }
+            // Create a server manager for the random configuration and assign queries to
+            // this server configuration
+            manager = new ServerManager(NUM_MACHINES, NUM_SHARDS_PER_MACHINE, NUM_CORES_PER_MACHINE,
+                    ServerManager.ServerType.RANDOM);
+            randomQueries.assignQueries(manager);
+            manager.startAllServers(false); // false indicates we don't output statistics everytime
+                                            // a shard access has finished
+            randomQueries.outputStatistics("", "Random", fw);
+            System.out.println();
         }
         fw.close();
     }

@@ -17,12 +17,12 @@ random = None
 all_vals = []
 
 
-with open("src/OUTPUT.txt", "r") as f:
+with open("src/testing.txt", "r") as f:
 	for line in f:
 		line = line.strip()
 		
 		if line == "":
-			all_vals.append((round_robin / random, round_robin, random, stats))
+			all_vals.append((round_robin / random))
 			stats = None 
 			round_robin = None 
 			random = None
@@ -35,10 +35,4 @@ with open("src/OUTPUT.txt", "r") as f:
 		else:
 			stats = line
 
-all_vals.sort()
-i = 0
-while all_vals[i][0] < 0.1:
-	print(all_vals[i])
-	i += 1
-
-print(i)
+print(all_vals)

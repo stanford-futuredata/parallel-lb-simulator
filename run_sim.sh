@@ -34,7 +34,6 @@ java App ${@:1}
 
 echo "Plotting results."
 
-python3 grapher.py
 
 [ -e OUTPUT.txt ] && rm OUTPUT.txt 
 
