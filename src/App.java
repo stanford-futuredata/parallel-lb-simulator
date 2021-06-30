@@ -15,22 +15,23 @@ public class App {
     // Constants for server generation
     public static int NUM_MACHINES = 200;
     public static int NUM_CORES_PER_MACHINE = 2;
-    public static int NUM_SHARDS_PER_MACHINE;
+    public static int NUM_SHARDS_PER_MACHINE = 50;
 
     // Constants for query generation
-    public static int NUM_QUERIES = 20000;
-    public static int NUM_SHARD_ACCESS_PER_QUERY = 200; 
+    public static int NUM_QUERIES = 10000;
+    public static int NUM_SHARD_ACCESS_PER_QUERY; 
     public static double SECONDS_PER_ACCESS = 1;
     public static double AVG_QUERIES_PER_SECOND = 2;
     public static Boolean UNIFORM_SHARD_DISTRIBUTION = true;
 
     public static void main(String[] args) throws Exception {
-        FileWriter fw = new FileWriter("testing.txt", true);
         int overall = 3000000;
 
-        for (int shards = 20; shards <= 500; shards += 20) {
-            NUM_SHARDS_PER_MACHINE = shards;
-            NUM_QUERIES = overall / NUM_SHARD_ACCESS_PER_QUERY;
+        for (int machines = 50; machines <= 2000; machines += 50) {
+            FileWriter fw = new FileWriter("testing.txt", true);
+            NUM_MACHINES = machines;
+            NUM_SHARD_ACCESS_PER_QUERY = machines;
+            NUM_QUERIES -= 50;
 
             System.out.println("---------------------------");
             System.out.println("SIMULATOR PARAMETERS");
@@ -48,6 +49,8 @@ public class App {
             // Generate random queries given parameters
             QueryGenerator randomQueries = new QueryGenerator(NUM_QUERIES, SECONDS_PER_ACCESS,
                     AVG_QUERIES_PER_SECOND, NUM_SHARD_ACCESS_PER_QUERY, UNIFORM_SHARD_DISTRIBUTION);
+
+            System.out.println("Generated Queries");
 
             // Create a server manager for the round-robin configuration and assign queries
             // to this server configuration
@@ -69,8 +72,9 @@ public class App {
                                             // a shard access has finished
             randomQueries.outputStatistics("", "Random", fw);
             System.out.println();
+            fw.close();
         }
-        fw.close();
+    
     }
 
     // TESTCASES (call functions to activate unit tests)

@@ -37,7 +37,7 @@ with open("src/testing.txt", "r") as f:
 			random = float(tokens[1])
 		elif tokens[0] != "":
 			stats = line.split(", ")
-			numMachines = stats[2]
+			numMachines = stats[0]
 
 x_axis = [int(i[1]) for i in all_vals]
 y_axis = [float(i[0]) for i in all_vals]
@@ -45,7 +45,7 @@ y_axis = [float(i[0]) for i in all_vals]
 sns.scatterplot(x = x_axis, y = y_axis)
 plt.xlabel("Number of Shards/Machine")
 plt.ylabel("Percentage Reduction in Latency")
-plt.suptitle("Number of Shards/Machine vs Percentage Latency Reduction (200 machines, 2 cores/machine, 200 shards/query)")
+plt.suptitle("Number of Machines vs Percentage Latency Reduction (1000 shards/query, 2 cores/machine, 100 shards/machine)")
 plt.ylim(ymin = 0)
 plt.ylim(ymax = 1)
 
