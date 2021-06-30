@@ -71,4 +71,8 @@ The other distribution is a uniform shard distribution. This is created by allow
 
 
 **Interesting Graphs**
-The most promising results are for the following simulator run: ```./run_sim.sh 15 3 10 25000 20 1 2 false```
+The most promising results are for the following simulator runs: 
+```
+./run_sim.sh 15 3 10 25000 20 1 2 false
+./run_sim.sh 43 3 6 50000 58 1 2 false
+```
