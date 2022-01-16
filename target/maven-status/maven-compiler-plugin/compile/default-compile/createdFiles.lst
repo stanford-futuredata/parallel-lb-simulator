@@ -1,0 +1,9 @@
+edu/stanford/futuredata/WeightedRandomBag.class
+edu/stanford/futuredata/LoadBalancerTest.class
+edu/stanford/futuredata/ShardAccess.class
+edu/stanford/futuredata/App.class
+edu/stanford/futuredata/WeightedRandomBag$Entry.class
+edu/stanford/futuredata/LoadBalancer.class
+edu/stanford/futuredata/Query.class
+edu/stanford/futuredata/Server.class
+edu/stanford/futuredata/WeightedRandomBag$1.class
