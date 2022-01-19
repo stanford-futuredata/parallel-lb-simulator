@@ -83,7 +83,7 @@ public class LoadBalancerTest {
             }
         }
 
-        if (true) { // Zipfian (first 20% of shards get 80% of load)
+        if (false) { // Zipfian (first 20% of shards get 80% of load)
             for (int i = 0; i < 20; i++) {
                 additionalQueryLoad.put(i, 16);   
             }

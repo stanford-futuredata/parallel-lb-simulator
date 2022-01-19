@@ -1,0 +1,162 @@
+5 machines; 20 shards/machine; 3 shards/query:
+
+Avg Random 50th percentile latency: 24
+Avg Random 99th percentile latency: 113
+Avg Random 99.9 percentile latency: 142
+Avg LB 50th percentile latency: 20
+Avg LB 99th percentile latency: 83
+Avg LB 99.9 percentile latency: 104
+Last query at: 331637.68182416697
+
+Avg Random 50th percentile latency: 29
+Avg Random 99th percentile latency: 148
+Avg Random 99.9 percentile latency: 164
+Avg LB 50th percentile latency: 22
+Avg LB 99th percentile latency: 123
+Avg LB 99.9 percentile latency: 137
+Last query at: 334717.3079317865
+
+Avg Random 50th percentile latency: 26
+Avg Random 99th percentile latency: 134
+Avg Random 99.9 percentile latency: 157
+Avg LB 50th percentile latency: 23
+Avg LB 99th percentile latency: 126
+Avg LB 99.9 percentile latency: 160
+Last query at: 332020.94277283933
+
+Avg Random 50th percentile latency: 25
+Avg Random 99th percentile latency: 107
+Avg Random 99.9 percentile latency: 129
+Avg LB 50th percentile latency: 20
+Avg LB 99th percentile latency: 83
+Avg LB 99.9 percentile latency: 119
+Last query at: 335677.50090396655
+
+Avg Random 50th percentile latency: 23
+Avg Random 99th percentile latency: 115
+Avg Random 99.9 percentile latency: 148
+Avg LB 50th percentile latency: 18
+Avg LB 99th percentile latency: 90
+Avg LB 99.9 percentile latency: 106
+Last query at: 332228.1045425688
+
+Avg Random 50th percentile latency: 21
+Avg Random 99th percentile latency: 131
+Avg Random 99.9 percentile latency: 198
+Avg LB 50th percentile latency: 18
+Avg LB 99th percentile latency: 118
+Avg LB 99.9 percentile latency: 137
+Last query at: 332122.78300127044
+
+Avg Random 50th percentile latency: 26
+Avg Random 99th percentile latency: 141
+Avg Random 99.9 percentile latency: 165
+Avg LB 50th percentile latency: 21
+Avg LB 99th percentile latency: 96
+Avg LB 99.9 percentile latency: 109
+Last query at: 333967.02477052406
+
+Avg Random 50th percentile latency: 23
+Avg Random 99th percentile latency: 112
+Avg Random 99.9 percentile latency: 150
+Avg LB 50th percentile latency: 20
+Avg LB 99th percentile latency: 90
+Avg LB 99.9 percentile latency: 114
+Last query at: 334302.38875297515
+
+Avg Random 50th percentile latency: 22
+Avg Random 99th percentile latency: 95
+Avg Random 99.9 percentile latency: 106
+Avg LB 50th percentile latency: 18
+Avg LB 99th percentile latency: 80
+Avg LB 99.9 percentile latency: 132
+Last query at: 333771.28362376406
+
+Avg Random 50th percentile latency: 23
+Avg Random 99th percentile latency: 123
+Avg Random 99.9 percentile latency: 156
+Avg LB 50th percentile latency: 19
+Avg LB 99th percentile latency: 92
+Avg LB 99.9 percentile latency: 124
+Last query at: 333598.60351524566
+
+Avg Random 50th percentile latency: 25
+Avg Random 99th percentile latency: 139
+Avg Random 99.9 percentile latency: 209
+Avg LB 50th percentile latency: 19
+Avg LB 99th percentile latency: 119
+Avg LB 99.9 percentile latency: 171
+Last query at: 333948.1172147883
+
+Avg Random 50th percentile latency: 23
+Avg Random 99th percentile latency: 136
+Avg Random 99.9 percentile latency: 164
+Avg LB 50th percentile latency: 21
+Avg LB 99th percentile latency: 98
+Avg LB 99.9 percentile latency: 113
+Last query at: 335541.8821677265
+
+Avg Random 50th percentile latency: 24
+Avg Random 99th percentile latency: 117
+Avg Random 99.9 percentile latency: 161
+Avg LB 50th percentile latency: 21
+Avg LB 99th percentile latency: 117
+Avg LB 99.9 percentile latency: 132
+Last query at: 337083.19007555005
+
+Avg Random 50th percentile latency: 26
+Avg Random 99th percentile latency: 171
+Avg Random 99.9 percentile latency: 244
+Avg LB 50th percentile latency: 20
+Avg LB 99th percentile latency: 95
+Avg LB 99.9 percentile latency: 112
+Last query at: 331192.66489388165
+
+Avg Random 50th percentile latency: 23
+Avg Random 99th percentile latency: 256
+Avg Random 99.9 percentile latency: 327
+Avg LB 50th percentile latency: 21
+Avg LB 99th percentile latency: 147
+Avg LB 99.9 percentile latency: 178
+Last query at: 329586.3669366445
+
+Avg Random 50th percentile latency: 25
+Avg Random 99th percentile latency: 114
+Avg Random 99.9 percentile latency: 155
+Avg LB 50th percentile latency: 21
+Avg LB 99th percentile latency: 99
+Avg LB 99.9 percentile latency: 144
+Last query at: 334441.16111840506
+
+Avg Random 50th percentile latency: 25
+Avg Random 99th percentile latency: 108
+Avg Random 99.9 percentile latency: 135
+Avg LB 50th percentile latency: 21
+Avg LB 99th percentile latency: 118
+Avg LB 99.9 percentile latency: 148
+Last query at: 334103.13375704543
+
+Avg Random 50th percentile latency: 24
+Avg Random 99th percentile latency: 107
+Avg Random 99.9 percentile latency: 132
+Avg LB 50th percentile latency: 20
+Avg LB 99th percentile latency: 91
+Avg LB 99.9 percentile latency: 105
+Last query at: 335719.9991874708
+
+Avg Random 50th percentile latency: 27
+Avg Random 99th percentile latency: 125
+Avg Random 99.9 percentile latency: 146
+Avg LB 50th percentile latency: 22
+Avg LB 99th percentile latency: 96
+Avg LB 99.9 percentile latency: 121
+Last query at: 331293.2770946624
+
+Avg Random 50th percentile latency: 27
+Avg Random 99th percentile latency: 129
+Avg Random 99.9 percentile latency: 158
+Avg LB 50th percentile latency: 20
+Avg LB 99th percentile latency: 96
+Avg LB 99.9 percentile latency: 115
+Last query at: 335529.780561762
+

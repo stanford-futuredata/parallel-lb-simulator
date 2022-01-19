@@ -17,13 +17,13 @@ import java.util.Collections;
 public class App {
     public static int NUM_MACHINES = 10;
     public static int NUM_CORES_PER_MACHINE = 4;
-    public static int NUM_SHARDS_PER_MACHINE = 10;
-    public static int TICKS_PER_ACCESS = 4;
+    public static int NUM_SHARDS_PER_MACHINE = 20;
+    public static int TICKS_PER_ACCESS = 5;
     public static int QUERY_SIZE = 3;
 
-    public static double AVERAGE_QUERY_RATE = 0.05;
+    public static double AVERAGE_QUERY_RATE = 0.1;
     public static int NUM_TRIALS = 20000;
-    public static int NUM_SIMULATIONS = 30;
+    public static int NUM_SIMULATIONS = 5000;
 
     public static int TICK = 0;
 
@@ -145,24 +145,24 @@ public class App {
         }
 
         if (false) { // Make 5 random shards very hot (20x more load)
-        	for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 5; i++) {
                 additionalQueryLoad.put(ThreadLocalRandom.current().nextInt(0, numShards), 20);   
             }
         }
 
         if (false) { // every shard has a random load between 1 and 20
-        	for (int i = 0; i < numShards; i++) {
+            for (int i = 0; i < numShards; i++) {
                 additionalQueryLoad.put(i, ThreadLocalRandom.current().nextInt(1, 5));   
             }
         }
 
-        if (false) { // Zipfian (first 20% of shards get 80% of load)
-        	for (int i = 0; i < 20; i++) {
+        if (true) { // Zipfian (first 20% of shards get 80% of load)
+            for (int i = 0; i < 20; i++) {
                 additionalQueryLoad.put(i, 16);   
             }
         }
 
-        if (true) { // first 5 queries get 10x more accesses
+        if (false) { // first 5 queries get 10x more accesses
             for (int startShard = 0; startShard < 5; startShard += 1) {
                 additionalQueryLoad.put(startShard, 10);
             }
@@ -181,7 +181,7 @@ public class App {
             }
 
             Set<Integer> accessedShards = new HashSet<Integer>();
-            for (int i = 0; i < NUM_SHARDS_PER_MACHINE; i++) {
+            for (int i = 0; i < QUERY_SIZE; i++) {
                 int shardNum = (startShard + i) % numShards;
                 accessedShards.add(shardNum);
                 shardLoads[shardNum] += numHits;
@@ -196,27 +196,8 @@ public class App {
 
         System.out.println(NUM_MACHINES + " machines; " + NUM_SHARDS_PER_MACHINE + " shards/machine; " + QUERY_SIZE + " shards/query:");
 
-        // Track stats for random configurations across all trials
-        int max50thRandom = 0;
-        int max99thRandom = 0;
-        int max999thRandom = 0;
-        int avg50thRandom = 0;
-        int avg99thRandom = 0;
-        int avg999thRandom = 0;
-        double avgThroughputRandom = 0;
-        int numTrialsUsed = 0;
-
-        // Track stats for load balanced configurations across all trials
-        int max50thLB = 0;
-        int max99thLB = 0;
-        int max999thLB = 0;
-        int avg50thLB = 0;
-        int avg99thLB = 0;
-        int avg999thLB = 0;
-        double avgThroughputLB = 0;
-
         for (int simNumber = 0; simNumber < NUM_SIMULATIONS; simNumber++) {
-            System.out.println("Starting simulation " + (simNumber + 1));
+            System.out.println();
             // -------------------- 
             // Generate queries
             // --------------------
@@ -252,8 +233,6 @@ public class App {
                 }
             }
             generatedQueries.sort(Comparator.comparing(Entry::getValue));
-            // System.out.println("Generated " + generatedQueries.size() + " queries");
-            numTrialsUsed += generatedQueries.size();
 
             // -------------------------------------
             // Generate random-sharding server configuration
@@ -295,16 +274,16 @@ public class App {
             for (double[] x : randomCalculatedAssignments) {
                 int shardId = 0;
                 for (double probability : x) {
-                    if (probability > 0.001) {
+                    if (probability > 0.01) {
                         Server assignedServer = serversByIndex.get(serverId);
 
                         if (!shardIdToServer.containsKey(shardId)) {
-                        	WeightedRandomBag<Server> possibleServers = new WeightedRandomBag<>();
-                        	possibleServers.addEntry(assignedServer, probability);
-                        	shardIdToServer.put(shardId, possibleServers);
+                            WeightedRandomBag<Server> possibleServers = new WeightedRandomBag<>();
+                            possibleServers.addEntry(assignedServer, probability);
+                            shardIdToServer.put(shardId, possibleServers);
                         } else {
-                        	shardIdToServer.get(shardId).addEntry(assignedServer, probability);
-                        	System.out.println("Added duplicate shard");
+                            shardIdToServer.get(shardId).addEntry(assignedServer, probability);
+                            System.out.println("Added duplicate shard");
                         }
 
                         // System.out.println("Shard " + shardId + " assigned to server " + serverId  + " with weight " + probability);
@@ -316,13 +295,9 @@ public class App {
 
             runQueries(shardIdToServer);
             List<Integer> randomPercentiles = outputResults(false, numShardsPerServer);
-            max50thRandom = Math.max(max50thRandom, randomPercentiles.get(0));
-            max99thRandom = Math.max(max99thRandom, randomPercentiles.get(1));
-            max999thRandom = Math.max(max999thRandom, randomPercentiles.get(2));
-            avg50thRandom += randomPercentiles.get(0);
-            avg99thRandom += randomPercentiles.get(1);
-            avg999thRandom += randomPercentiles.get(2);
-            avgThroughputRandom += (double) (TICK / 1000);
+            System.out.println("Avg Random 50th percentile latency: " + randomPercentiles.get(0));
+            System.out.println("Avg Random 99th percentile latency: " + randomPercentiles.get(1));
+            System.out.println("Avg Random 99.9 percentile latency: " + randomPercentiles.get(2));
             resetState(shardIdToServer);
 
             // -------------------------------------
@@ -340,7 +315,7 @@ public class App {
             for (double[] x : calculatedAssignments) {
                 int shardId = 0;
                 for (double probability : x) {
-                    if (probability > 0.001) {
+                    if (probability > 0.01) {
                         Server assignedServer = serverIdToServer.get(serverId);
 
                         // Increment number of assigned shards for server
@@ -351,12 +326,12 @@ public class App {
                         }
 
                         if (!shardIdToServer.containsKey(shardId)) {
-                        	WeightedRandomBag<Server> possibleServers = new WeightedRandomBag<>();
-                        	possibleServers.addEntry(assignedServer, probability);
-                        	shardIdToServer.put(shardId, possibleServers);
+                            WeightedRandomBag<Server> possibleServers = new WeightedRandomBag<>();
+                            possibleServers.addEntry(assignedServer, probability);
+                            shardIdToServer.put(shardId, possibleServers);
                         } else {
-                        	shardIdToServer.get(shardId).addEntry(assignedServer, probability);
-                        	System.out.println("Added duplicate shard");
+                            shardIdToServer.get(shardId).addEntry(assignedServer, probability);
+                            System.out.println("Added duplicate shard");
                         }
 
                         // System.out.println("Shard " + shardId + " assigned to server " + serverId);
@@ -368,35 +343,11 @@ public class App {
 
             runQueries(shardIdToServer);
             List<Integer> roundRobinPercentiles = outputResults(false, numShardsPerServer);
-            max50thLB = Math.max(max50thLB, roundRobinPercentiles.get(0));
-            max99thLB = Math.max(max99thLB, roundRobinPercentiles.get(1));
-            max999thLB = Math.max(max999thLB, roundRobinPercentiles.get(2));
-            avg50thLB += roundRobinPercentiles.get(0);
-            avg99thLB += roundRobinPercentiles.get(1);
-            avg999thLB += roundRobinPercentiles.get(2);
-            avgThroughputLB += (double) (TICK / 1000);
+            System.out.println("Avg LB 50th percentile latency: " + roundRobinPercentiles.get(0));
+            System.out.println("Avg LB 99th percentile latency: " + roundRobinPercentiles.get(1));
+            System.out.println("Avg LB 99.9 percentile latency: " + roundRobinPercentiles.get(2));
             resetState(shardIdToServer);
         }
-        System.out.println("Finished running " + NUM_SIMULATIONS + " simulations.");
-        System.out.println("\nMax latencies after " + NUM_SIMULATIONS + " for Random Load-Balanced sharding:");
-        System.out.println("----------------------------------");    
-        // System.out.println("Max 50th percentile latency: " + max50thRandom);
-        // System.out.println("Max 99th percentile latency: " + max99thRandom);
-        // System.out.println("Max 99.9 percentile latency: " + max999thRandom);
-        System.out.println("Avg 50th percentile latency: " + avg50thRandom / NUM_SIMULATIONS);
-        System.out.println("Avg 99th percentile latency: " + avg99thRandom / NUM_SIMULATIONS);
-        System.out.println("Avg 99.9 percentile latency: " + avg999thRandom / NUM_SIMULATIONS);
-        System.out.println("Avg Throughput: " + numTrialsUsed / avgThroughputRandom + ":" + (avg999thRandom / NUM_SIMULATIONS));
-
-        System.out.println("\nMax latencies after " + NUM_SIMULATIONS + " trials for Parallel-Aware Load-Balanced sharding:");
-        System.out.println("----------------------------------");    
-        // System.out.println("Max 50th percentile latency: " + max50thLB);
-        // System.out.println("Max 99th percentile latency: " + max99thLB);
-        // System.out.println("Max 99.9 percentile latency: " + max999thLB);
-        System.out.println("Avg 50th percentile latency: " + avg50thLB / NUM_SIMULATIONS);
-        System.out.println("Avg 99th percentile latency: " + avg99thLB / NUM_SIMULATIONS);
-        System.out.println("Avg 99.9 percentile latency: " + avg999thLB / NUM_SIMULATIONS);
-        System.out.println("Avg Throughput: " + numTrialsUsed / avgThroughputLB + ":" + (avg999thLB / NUM_SIMULATIONS));
     }
 }
 
