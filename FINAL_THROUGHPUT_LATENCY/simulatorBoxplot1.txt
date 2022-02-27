@@ -1,0 +1,2193 @@
+5 machines; 20 shards/machine; 3 shards/query:
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 8200
+Random Throughput: 1165.8710204176805
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7400
+LB Throughput: 1165.8710204176805
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1183.4954167290775
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1183.4954167290775
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1163.8183425044642
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1163.8183425044642
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1137.2015956359887
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6400
+LB Throughput: 1137.2015956359887
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1171.1924715747928
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1171.1924715747928
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1175.7983946677543
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1175.7983946677543
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9400
+Random Throughput: 1164.98690117853
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1164.98690117853
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1172.581239726173
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1172.581239726173
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 11200
+Random Throughput: 1174.3166669663622
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1174.3166669663622
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1168.820827802741
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1168.820827802741
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1189.0040901740701
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1189.0040901740701
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1165.095911059491
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1165.095911059491
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8400
+Random Throughput: 1157.2257537698435
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6400
+LB Throughput: 1157.2257537698435
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1162.1716048064513
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1162.1716048064513
+
+Avg Random p50: 1200
+Avg Random p99: 6000
+Avg Random p999: 8600
+Random Throughput: 1184.4508256732677
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1184.4508256732677
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1164.3468269001958
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1164.3468269001958
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 10800
+Random Throughput: 1154.659828193834
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1154.659828193834
+
+Avg Random p50: 1200
+Avg Random p99: 6000
+Avg Random p999: 9000
+Random Throughput: 1166.0116353386063
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1166.0116353386063
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1176.247879537514
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1176.247879537514
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1165.2651925090927
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1165.2651925090927
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1163.0205970947748
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1163.0205970947748
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 8200
+Random Throughput: 1154.5694249811302
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1154.5694249811302
+
+Avg Random p50: 1400
+Avg Random p99: 5400
+Avg Random p999: 8000
+Random Throughput: 1158.1337543149532
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1158.1337543149532
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1164.8545897454937
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1164.8545897454937
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1168.5425426171116
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1168.5425426171116
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9800
+Random Throughput: 1194.7199352461794
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1194.7199352461794
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7600
+Random Throughput: 1143.985193971627
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1143.985193971627
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7800
+Random Throughput: 1140.9188033045286
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1140.9188033045286
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9200
+Random Throughput: 1166.9249703710457
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1166.9249703710457
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9400
+Random Throughput: 1170.2489082857646
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1170.2489082857646
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 7800
+Random Throughput: 1140.6377876189472
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1140.6377876189472
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9400
+Random Throughput: 1172.4270081751138
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1172.4270081751138
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1166.9985926726345
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1166.9985926726345
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 10000
+Random Throughput: 1163.3558891074624
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1163.3558891074624
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 11800
+Random Throughput: 1176.3849543305305
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1176.3849543305305
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1188.5192016419394
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1188.5192016419394
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7600
+Random Throughput: 1178.4132371158928
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1178.4132371158928
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8400
+Random Throughput: 1174.5364893618191
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1174.5364893618191
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 9800
+Random Throughput: 1177.3198167207374
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1177.3198167207374
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 7600
+Random Throughput: 1163.3516597574485
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1163.3516597574485
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1139.1934154620585
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7000
+LB Throughput: 1139.1934154620585
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10400
+Random Throughput: 1217.017865061623
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1217.017865061623
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8400
+Random Throughput: 1190.376992393491
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1190.376992393491
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10400
+Random Throughput: 1197.9074055010155
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1197.9074055010155
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 10000
+Random Throughput: 1182.9043703141278
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1182.9043703141278
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1180.0436911176637
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 5800
+LB Throughput: 1180.0436911176637
+
+Avg Random p50: 1200
+Avg Random p99: 6200
+Avg Random p999: 8400
+Random Throughput: 1149.7118893862194
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1149.7118893862194
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 9600
+Random Throughput: 1165.1128794126375
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1165.1128794126375
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 8200
+Random Throughput: 1146.655849879816
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 5800
+LB Throughput: 1146.655849879816
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9400
+Random Throughput: 1171.4372839933712
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1171.4372839933712
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9400
+Random Throughput: 1199.7236136725003
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1199.7236136725003
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8200
+Random Throughput: 1168.7755760967864
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1168.7755760967864
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 8800
+Random Throughput: 1201.4641342305767
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1201.4641342305767
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1133.4471030863058
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1133.4471030863058
+
+Avg Random p50: 1400
+Avg Random p99: 7200
+Avg Random p999: 10000
+Random Throughput: 1186.589315875638
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1186.589315875638
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8600
+Random Throughput: 1147.4954835294952
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1147.4954835294952
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9400
+Random Throughput: 1159.5954896083938
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1159.5954896083938
+
+Avg Random p50: 1200
+Avg Random p99: 6000
+Avg Random p999: 9000
+Random Throughput: 1190.7282456740286
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1190.7282456740286
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 8800
+Random Throughput: 1151.3557934064731
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1151.3557934064731
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 10000
+Random Throughput: 1183.2696031720502
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1183.2696031720502
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 8600
+Random Throughput: 1183.8991199559885
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1183.8991199559885
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 9000
+Random Throughput: 1127.6233540663331
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1127.6233540663331
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1194.3275413423942
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1194.3275413423942
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1128.1031650344426
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1128.1031650344426
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1176.0442721866266
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1176.0442721866266
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7400
+Random Throughput: 1162.4903595037765
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1162.4903595037765
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1147.8181769921282
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1147.8181769921282
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9400
+Random Throughput: 1181.3650008066509
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1181.3650008066509
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9400
+Random Throughput: 1201.3870012929929
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1201.3870012929929
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10000
+Random Throughput: 1182.3798794415916
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1182.3798794415916
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1161.1750946811285
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6400
+LB Throughput: 1161.1750946811285
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8400
+Random Throughput: 1155.1545885628145
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1155.1545885628145
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7400
+Random Throughput: 1169.4371973852844
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1169.4371973852844
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10600
+Random Throughput: 1151.1524294892158
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 5800
+LB Throughput: 1151.1524294892158
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10400
+Random Throughput: 1177.415117568579
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1177.415117568579
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1187.1818491767078
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1187.1818491767078
+
+Avg Random p50: 1400
+Avg Random p99: 7400
+Avg Random p999: 11200
+Random Throughput: 1207.8707880224513
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1207.8707880224513
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8200
+Random Throughput: 1177.9538573387447
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1177.9538573387447
+
+Avg Random p50: 1200
+Avg Random p99: 5200
+Avg Random p999: 7800
+Random Throughput: 1143.4210944755253
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1143.4210944755253
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1180.071541837224
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1180.071541837224
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1144.4696188022053
+Avg LB p50: 1200
+Avg LB p99: 5000
+Avg LB p999: 7400
+LB Throughput: 1144.4696188022053
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8600
+Random Throughput: 1169.3948893058107
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1169.3948893058107
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 10000
+Random Throughput: 1156.3877049968237
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1156.3877049968237
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8600
+Random Throughput: 1145.5520540643292
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1145.5520540643292
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7800
+Random Throughput: 1121.8733040430911
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1121.8733040430911
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1157.7717235964733
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7200
+LB Throughput: 1157.7717235964733
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 9800
+Random Throughput: 1196.0895347772375
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1196.0895347772375
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8200
+Random Throughput: 1166.9743345875877
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1166.9743345875877
+
+Avg Random p50: 1200
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1183.6810334719105
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1183.6810334719105
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 8000
+Random Throughput: 1129.9215587267904
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1129.9215587267904
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10200
+Random Throughput: 1184.5999050839325
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1184.5999050839325
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9400
+Random Throughput: 1169.0787440294785
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1169.0787440294785
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8400
+Random Throughput: 1182.349298497382
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1182.349298497382
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 11600
+Random Throughput: 1191.2207034158253
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1191.2207034158253
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8400
+Random Throughput: 1137.8210655480937
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1137.8210655480937
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1155.1370750629728
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1155.1370750629728
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7600
+Random Throughput: 1150.5907564415104
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1150.5907564415104
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8600
+Random Throughput: 1156.0447230351665
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1156.0447230351665
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 9800
+Random Throughput: 1175.528004934279
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1175.528004934279
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 9000
+Random Throughput: 1169.7911666875646
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1169.7911666875646
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10000
+Random Throughput: 1164.7235801564589
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1164.7235801564589
+
+Avg Random p50: 1400
+Avg Random p99: 7200
+Avg Random p999: 11200
+Random Throughput: 1179.9314312347024
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1179.9314312347024
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9800
+Random Throughput: 1216.157103174588
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1216.157103174588
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1160.053695985453
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1160.053695985453
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8600
+Random Throughput: 1164.3790257495145
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1164.3790257495145
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1186.5118812479584
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1186.5118812479584
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1181.958002077291
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1181.958002077291
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1156.4152860754589
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1156.4152860754589
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9600
+Random Throughput: 1155.1483336804793
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1155.1483336804793
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9200
+Random Throughput: 1180.3004897509343
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1180.3004897509343
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9200
+Random Throughput: 1161.9783261992704
+Avg LB p50: 1200
+Avg LB p99: 5000
+Avg LB p999: 7000
+LB Throughput: 1161.9783261992704
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9800
+Random Throughput: 1180.8680191787728
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1180.8680191787728
+
+Avg Random p50: 1400
+Avg Random p99: 7400
+Avg Random p999: 10600
+Random Throughput: 1161.0444901363828
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 5800
+LB Throughput: 1161.0444901363828
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1174.7710573123074
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1174.7710573123074
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9200
+Random Throughput: 1176.0926819838037
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1176.0926819838037
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1169.5547358926115
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1169.5547358926115
+
+Avg Random p50: 1200
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1152.1102339071801
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1152.1102339071801
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 9200
+Random Throughput: 1175.9755544081627
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1175.9755544081627
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9600
+Random Throughput: 1194.236614100352
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1194.236614100352
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7800
+Random Throughput: 1161.7657096137566
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1161.7657096137566
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9400
+Random Throughput: 1198.1765251008621
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1198.1765251008621
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1145.0515523678594
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1145.0515523678594
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1148.064847007802
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1148.064847007802
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1163.9080832688942
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1163.9080832688942
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10600
+Random Throughput: 1212.7974385718098
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1212.7974385718098
+
+Avg Random p50: 1200
+Avg Random p99: 5200
+Avg Random p999: 7200
+Random Throughput: 1168.1735497034115
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1168.1735497034115
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 8200
+Random Throughput: 1142.4319949504506
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1142.4319949504506
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8600
+Random Throughput: 1187.2598117747975
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1187.2598117747975
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9000
+Random Throughput: 1177.2072083340386
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1177.2072083340386
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1152.4649965768187
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1152.4649965768187
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1178.4579362329046
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1178.4579362329046
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1168.9583120241975
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1168.9583120241975
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1155.3264158164186
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1155.3264158164186
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1171.024891963805
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1171.024891963805
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8200
+Random Throughput: 1169.4414710988985
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1169.4414710988985
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10000
+Random Throughput: 1172.7273460227318
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1172.7273460227318
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8400
+Random Throughput: 1155.3994161622325
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7400
+LB Throughput: 1155.3994161622325
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9200
+Random Throughput: 1160.1264537834622
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1160.1264537834622
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 8800
+Random Throughput: 1170.8912055459264
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1170.8912055459264
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1163.6279008879935
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1163.6279008879935
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8800
+Random Throughput: 1171.039462200127
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1171.039462200127
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1168.933972399277
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1168.933972399277
+
+Avg Random p50: 1600
+Avg Random p99: 7400
+Avg Random p999: 10600
+Random Throughput: 1186.477126945637
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1186.477126945637
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8800
+Random Throughput: 1146.043553236409
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1146.043553236409
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1181.7353931966015
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1181.7353931966015
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1197.8370058267285
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1197.8370058267285
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9200
+Random Throughput: 1157.9388832620295
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1157.9388832620295
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9400
+Random Throughput: 1162.589610227301
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1162.589610227301
+
+Avg Random p50: 1400
+Avg Random p99: 7200
+Avg Random p999: 9600
+Random Throughput: 1206.6983827224926
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1206.6983827224926
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1184.817014268529
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1184.817014268529
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 10000
+Random Throughput: 1183.056997098183
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1183.056997098183
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10400
+Random Throughput: 1171.9353706941447
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1171.9353706941447
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8400
+Random Throughput: 1148.811267540912
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1148.811267540912
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9600
+Random Throughput: 1153.830066792338
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1153.830066792338
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9400
+Random Throughput: 1165.998039665796
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1165.998039665796
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 8800
+Random Throughput: 1154.948630050464
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1154.948630050464
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 8000
+Random Throughput: 1149.434370530227
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7000
+LB Throughput: 1149.434370530227
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1158.3307874187904
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1158.3307874187904
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 10200
+Random Throughput: 1153.6520297065397
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1153.6520297065397
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1207.0975829002557
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1207.0975829002557
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8800
+Random Throughput: 1168.2315493342358
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1168.2315493342358
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1152.8029503109506
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1152.8029503109506
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10600
+Random Throughput: 1177.1838231399022
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7000
+LB Throughput: 1177.1838231399022
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10000
+Random Throughput: 1189.9719575670874
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1189.9719575670874
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1186.8256419614074
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1186.8256419614074
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 11600
+Random Throughput: 1174.7214625282209
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1174.7214625282209
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1174.5843439652792
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1174.5843439652792
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7600
+Random Throughput: 1152.2612406684846
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1152.2612406684846
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9200
+Random Throughput: 1182.6927696816708
+Avg LB p50: 1200
+Avg LB p99: 5000
+Avg LB p999: 6600
+LB Throughput: 1182.6927696816708
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8200
+Random Throughput: 1184.9960247086485
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1184.9960247086485
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10200
+Random Throughput: 1175.1403466443683
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1175.1403466443683
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9600
+Random Throughput: 1187.9381217881587
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1187.9381217881587
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9400
+Random Throughput: 1159.2304448691734
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1159.2304448691734
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8600
+Random Throughput: 1163.259044702591
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1163.259044702591
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7600
+Random Throughput: 1141.8881691821512
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1141.8881691821512
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9400
+Random Throughput: 1166.4702500875762
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1166.4702500875762
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9400
+Random Throughput: 1209.826208465154
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1209.826208465154
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1174.5334716346497
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1174.5334716346497
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1168.0720642060012
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1168.0720642060012
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1166.2751140945077
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1166.2751140945077
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 12200
+Random Throughput: 1152.6900002341401
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1152.6900002341401
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9800
+Random Throughput: 1174.476568825428
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1174.476568825428
+
+Avg Random p50: 1200
+Avg Random p99: 6000
+Avg Random p999: 9400
+Random Throughput: 1172.1057869426681
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1172.1057869426681
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9600
+Random Throughput: 1163.3512368241381
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1163.3512368241381
+
+Avg Random p50: 1200
+Avg Random p99: 6200
+Avg Random p999: 9400
+Random Throughput: 1155.542940878451
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1155.542940878451
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9000
+Random Throughput: 1194.1809057190444
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1194.1809057190444
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 10000
+Random Throughput: 1165.9619276994297
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6200
+LB Throughput: 1165.9619276994297
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 10600
+Random Throughput: 1180.431979082745
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1180.431979082745
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1170.257467614039
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1170.257467614039
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8600
+Random Throughput: 1159.4820448770279
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1159.4820448770279
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9800
+Random Throughput: 1165.5801274416172
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6800
+LB Throughput: 1165.5801274416172
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10200
+Random Throughput: 1205.2462864290396
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1205.2462864290396
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1166.4264557184422
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1166.4264557184422
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8200
+Random Throughput: 1156.8504890043168
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7000
+LB Throughput: 1156.8504890043168
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 9200
+Random Throughput: 1189.2511025658464
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1189.2511025658464
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1188.7033067125703
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1188.7033067125703
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1152.8233002881336
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1152.8233002881336
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9000
+Random Throughput: 1181.7650695357952
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1181.7650695357952
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1163.3338968231894
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1163.3338968231894
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8200
+Random Throughput: 1151.8618226557542
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1151.8618226557542
+
+Avg Random p50: 1200
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1159.280000173892
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6400
+LB Throughput: 1159.280000173892
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1144.1884878905526
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1144.1884878905526
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7800
+Random Throughput: 1172.1852169861359
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1172.1852169861359
+
+Avg Random p50: 1200
+Avg Random p99: 5800
+Avg Random p999: 8200
+Random Throughput: 1144.175396367386
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1144.175396367386
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9200
+Random Throughput: 1175.1472514591105
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1175.1472514591105
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9400
+Random Throughput: 1172.9912890734397
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1172.9912890734397
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8800
+Random Throughput: 1150.8026128973327
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1150.8026128973327
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8200
+Random Throughput: 1161.0398563213178
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6400
+LB Throughput: 1161.0398563213178
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9800
+Random Throughput: 1175.8891283538105
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1175.8891283538105
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1181.8004212379878
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1181.8004212379878
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9800
+Random Throughput: 1164.3150534657111
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1164.3150534657111
+
+Avg Random p50: 1200
+Avg Random p99: 6200
+Avg Random p999: 9200
+Random Throughput: 1165.5682400138119
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1165.5682400138119
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1162.9233858805112
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1162.9233858805112
+
+Avg Random p50: 1400
+Avg Random p99: 6800
+Avg Random p999: 9400
+Random Throughput: 1184.2377949492259
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1184.2377949492259
+
+Avg Random p50: 1400
+Avg Random p99: 5600
+Avg Random p999: 7600
+Random Throughput: 1143.0784101779702
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1143.0784101779702
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8600
+Random Throughput: 1171.089175146999
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7400
+LB Throughput: 1171.089175146999
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8200
+Random Throughput: 1161.344503047985
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1161.344503047985
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1185.0521959943014
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1185.0521959943014
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7600
+Random Throughput: 1166.737764749206
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1166.737764749206
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 11000
+Random Throughput: 1165.0064111759066
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1165.0064111759066
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10600
+Random Throughput: 1195.8526335851475
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6600
+LB Throughput: 1195.8526335851475
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1167.6484035509648
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1167.6484035509648
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1165.2617979115594
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1165.2617979115594
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8200
+Random Throughput: 1193.9100142560317
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6200
+LB Throughput: 1193.9100142560317
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 10000
+Random Throughput: 1167.3762125208395
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 5800
+LB Throughput: 1167.3762125208395
+
+Avg Random p50: 1400
+Avg Random p99: 7400
+Avg Random p999: 10200
+Random Throughput: 1184.2671588283602
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 6200
+LB Throughput: 1184.2671588283602
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8200
+Random Throughput: 1172.0478312719943
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1172.0478312719943
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9000
+Random Throughput: 1192.55339844178
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1192.55339844178
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9200
+Random Throughput: 1199.4533491361312
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1199.4533491361312
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8200
+Random Throughput: 1171.3768216739854
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6200
+LB Throughput: 1171.3768216739854
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 9200
+Random Throughput: 1160.612019733306
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7200
+LB Throughput: 1160.612019733306
+
+Avg Random p50: 1400
+Avg Random p99: 6400
+Avg Random p999: 9200
+Random Throughput: 1182.8645801181904
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6800
+LB Throughput: 1182.8645801181904
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 10000
+Random Throughput: 1180.7255410859282
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 7000
+LB Throughput: 1180.7255410859282
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7600
+Random Throughput: 1187.0285966317322
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1187.0285966317322
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10800
+Random Throughput: 1178.8026238672903
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6000
+LB Throughput: 1178.8026238672903
+
+Avg Random p50: 1400
+Avg Random p99: 6000
+Avg Random p999: 8400
+Random Throughput: 1145.819495474192
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1145.819495474192
+
+Avg Random p50: 1400
+Avg Random p99: 6200
+Avg Random p999: 8800
+Random Throughput: 1163.1562973100192
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6600
+LB Throughput: 1163.1562973100192
+
+Avg Random p50: 1400
+Avg Random p99: 6600
+Avg Random p999: 9200
+Random Throughput: 1197.7276112894813
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1197.7276112894813
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 8000
+Random Throughput: 1142.1914084362256
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6600
+LB Throughput: 1142.1914084362256
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8000
+Random Throughput: 1143.4402974088214
+Avg LB p50: 1200
+Avg LB p99: 4800
+Avg LB p999: 7000
+LB Throughput: 1143.4402974088214
+
+Avg Random p50: 1200
+Avg Random p99: 5600
+Avg Random p999: 7600
+Random Throughput: 1163.7755935164607
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6400
+LB Throughput: 1163.7755935164607
+
+Avg Random p50: 1400
+Avg Random p99: 5800
+Avg Random p999: 8800
+Random Throughput: 1158.538373506255
+Avg LB p50: 1200
+Avg LB p99: 4600
+Avg LB p999: 6400
+LB Throughput: 1158.538373506255
+
+Avg Random p50: 1200
+Avg Random p99: 5400
+Avg Random p999: 7800
+Random Throughput: 1165.1243333304205
+Avg LB p50: 1200
+Avg LB p99: 4400
+Avg LB p999: 6000
+LB Throughput: 1165.1243333304205
+
+Avg Random p50: 1400
+Avg Random p99: 7000
+Avg Random p999: 10000
+Random Throughput: 1171.9572601836678
