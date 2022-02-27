@@ -1,0 +1,1056 @@
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+123497 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 116174ms
+
+205932 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 82429ms
+
+277702 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 71766ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124099 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2094μs p50: 1777μs p99: 6078μs Throughput: 888.9102633632674 Query Size: 3
+
+247393 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1977μs p50: 1728μs p99: 3937μs Throughput: 899.4147716272903 Query Size: 3
+
+369493 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1966μs p50: 1755μs p99: 3895μs Throughput: 902.2100328453744 Query Size: 3
+
+491330 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1969μs p50: 1765μs p99: 3855μs Throughput: 906.379934548804 Query Size: 3
+
+554964 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2840μs p50: 2267μs p99: 10844μs Throughput: 1757.7868465125657 Query Size: 3
+
+617588 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2615μs p50: 2221μs p99: 7333μs Throughput: 1776.6854312646872 Query Size: 3
+
+679455 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2590μs p50: 2231μs p99: 7277μs Throughput: 1787.9265117973196 Query Size: 3
+
+741760 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2637μs p50: 2252μs p99: 7775μs Throughput: 1786.6299012282136 Query Size: 3
+
+784112 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4123μs p50: 3326μs p99: 15655μs Throughput: 2640.4353583559127 Query Size: 3
+
+826312 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4024μs p50: 3282μs p99: 14313μs Throughput: 2644.2705269103376 Query Size: 3
+
+868522 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4093μs p50: 3326μs p99: 15114μs Throughput: 2645.2999772915764 Query Size: 3
+
+910934 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4002μs p50: 3297μs p99: 14233μs Throughput: 2633.7231103325507 Query Size: 3
+
+943256 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 8456μs p50: 6831μs p99: 33665μs Throughput: 3452.867283398307 Query Size: 3
+
+975465 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8555μs p50: 6777μs p99: 35496μs Throughput: 3452.8066650153555 Query Size: 3
+
+1007507 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8663μs p50: 6833μs p99: 38502μs Throughput: 3470.687960533935 Query Size: 3
+
+1039573 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8972μs p50: 7152μs p99: 35950μs Throughput: 3486.23403921784 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+135003 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 127312ms
+
+214106 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 79098ms
+
+284334 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 70226ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124574 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2316μs p50: 1763μs p99: 10782μs Throughput: 885.67475531514 Query Size: 3
+
+247126 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1979μs p50: 1679μs p99: 4285μs Throughput: 901.0889840140696 Query Size: 3
+
+369708 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1957μs p50: 1672μs p99: 4045μs Throughput: 900.3900425113792 Query Size: 3
+
+490780 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1946μs p50: 1699μs p99: 3808μs Throughput: 910.2472419333697 Query Size: 3
+
+552841 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2682μs p50: 2118μs p99: 9687μs Throughput: 1788.275376138868 Query Size: 3
+
+615708 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2645μs p50: 2133μs p99: 8691μs Throughput: 1770.8882287698364 Query Size: 3
+
+677145 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2501μs p50: 2132μs p99: 6826μs Throughput: 1794.2489315190196 Query Size: 3
+
+739585 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2521μs p50: 2142μs p99: 6896μs Throughput: 1788.5288813991801 Query Size: 3
+
+781768 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4447μs p50: 3425μs p99: 19255μs Throughput: 2656.0110722849054 Query Size: 3
+
+824097 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4120μs p50: 3311μs p99: 15755μs Throughput: 2651.2657552870282 Query Size: 3
+
+866397 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4265μs p50: 3444μs p99: 16285μs Throughput: 2648.0468871165044 Query Size: 3
+
+908563 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4189μs p50: 3391μs p99: 15946μs Throughput: 2651.5299569384 Query Size: 3
+
+941154 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9994μs p50: 7353μs p99: 56011μs Throughput: 3452.306744428907 Query Size: 3
+
+
+1005186 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 10018μs p50: 7561μs p99: 48284μs Throughput: 3491.941461497265 Query Size: 3
+
+1037488 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 9718μs p50: 7210μs p99: 51183μs Throughput: 3479.94543783048 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+146999 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 140101ms
+
+224928 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 77926ms
+
+297588 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 72658ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123838 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2140μs p50: 1806μs p99: 6412μs Throughput: 890.8433696133606 Query Size: 3
+
+246111 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2038μs p50: 1770μs p99: 4033μs Throughput: 901.2129666780246 Query Size: 3
+
+368395 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 2000μs p50: 1767μs p99: 3955μs Throughput: 902.4429324915092 Query Size: 3
+
+490472 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2030μs p50: 1779μs p99: 4011μs Throughput: 904.7361878398518 Query Size: 3
+
+552986 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2842μs p50: 2220μs p99: 9654μs Throughput: 1783.3677257172171 Query Size: 3
+
+615908 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2780μs p50: 2245μs p99: 9328μs Throughput: 1764.1743146766273 Query Size: 3
+
+678612 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2652μs p50: 2230μs p99: 7772μs Throughput: 1780.0490447474583 Query Size: 3
+
+740962 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2555μs p50: 2210μs p99: 6922μs Throughput: 1777.4063443322593 Query Size: 3
+
+783076 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4038μs p50: 3177μs p99: 15836μs Throughput: 2634.9171361439558 Query Size: 3
+
+825107 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 3952μs p50: 3160μs p99: 14695μs Throughput: 2648.800088545183 Query Size: 3
+
+867476 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 3891μs p50: 3175μs p99: 13708μs Throughput: 2641.2303215263537 Query Size: 3
+
+909514 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4032μs p50: 3178μs p99: 15814μs Throughput: 2653.1570077791143 Query Size: 3
+
+941942 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 8671μs p50: 6333μs p99: 37658μs Throughput: 3476.833507319588 Query Size: 3
+
+974166 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8264μs p50: 6123μs p99: 37446μs Throughput: 3475.8704631953387 Query Size: 3
+
+1006485 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8341μs p50: 6053μs p99: 38425μs Throughput: 3463.415753845812 Query Size: 3
+
+1038520 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8691μs p50: 6185μs p99: 41473μs Throughput: 3481.53124211886 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+135152 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 128471ms
+
+210867 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 75711ms
+
+280687 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 69818ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124534 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2163μs p50: 1788μs p99: 7072μs Throughput: 886.0577649543505 Query Size: 3
+
+247483 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2020μs p50: 1753μs p99: 3859μs Throughput: 898.4967581487244 Query Size: 3
+
+369977 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 2034μs p50: 1756μs p99: 3924μs Throughput: 905.8789987575669 Query Size: 3
+
+493018 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2072μs p50: 1788μs p99: 4034μs Throughput: 901.2783419493394 Query Size: 3
+
+555312 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2899μs p50: 2270μs p99: 11653μs Throughput: 1775.2598275986343 Query Size: 3
+
+617986 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2733μs p50: 2279μs p99: 8402μs Throughput: 1763.4042698609198 Query Size: 3
+
+680358 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2591μs p50: 2266μs p99: 6948μs Throughput: 1789.409126737282 Query Size: 3
+
+742645 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2573μs p50: 2267μs p99: 6827μs Throughput: 1788.2323050733726 Query Size: 3
+
+784874 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4247μs p50: 3431μs p99: 16358μs Throughput: 2651.8639499316073 Query Size: 3
+
+826962 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4422μs p50: 3538μs p99: 18884μs Throughput: 2662.743301833936 Query Size: 3
+
+869552 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4351μs p50: 3550μs p99: 16617μs Throughput: 2639.400159427817 Query Size: 3
+
+911694 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4399μs p50: 3549μs p99: 17667μs Throughput: 2645.73492328797 Query Size: 3
+
+943922 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 10403μs p50: 7855μs p99: 59538μs Throughput: 3484.9911183783647 Query Size: 3
+
+976250 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 9668μs p50: 7742μs p99: 41807μs Throughput: 3469.979623776119 Query Size: 3
+
+1008520 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 9710μs p50: 7807μs p99: 38895μs Throughput: 3461.349519431019 Query Size: 3
+
+1040481 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 9839μs p50: 7807μs p99: 41855μs Throughput: 3488.1110066101924 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+136837 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 129665ms
+
+215646 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 78806ms
+
+285453 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 69804ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124036 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2339μs p50: 1919μs p99: 8230μs Throughput: 889.7609658547608 Query Size: 3
+
+247707 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2123μs p50: 1864μs p99: 4244μs Throughput: 897.440075758233 Query Size: 3
+
+370300 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 2140μs p50: 1856μs p99: 4291μs Throughput: 903.8032547472143 Query Size: 3
+
+492749 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2127μs p50: 1887μs p99: 4278μs Throughput: 903.5882707862041 Query Size: 3
+
+555390 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 3141μs p50: 2470μs p99: 12302μs Throughput: 1774.8078546925942 Query Size: 3
+
+617994 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 3066μs p50: 2479μs p99: 10564μs Throughput: 1765.465838204605 Query Size: 3
+
+680654 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2877μs p50: 2465μs p99: 8199μs Throughput: 1783.1673875075264 Query Size: 3
+
+742717 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2818μs p50: 2462μs p99: 7714μs Throughput: 1788.8897165535254 Query Size: 3
+
+785296 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 5047μs p50: 3948μs p99: 21860μs Throughput: 2634.242080414887 Query Size: 3
+
+827333 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 5391μs p50: 4240μs p99: 23207μs Throughput: 2649.687509828947 Query Size: 3
+
+869637 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 5293μs p50: 4351μs p99: 19074μs Throughput: 2644.573470237361 Query Size: 3
+
+911746 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 5304μs p50: 4314μs p99: 19746μs Throughput: 2652.1942676758317 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+135498 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 129154ms
+
+214424 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 78923ms
+
+287188 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 72762ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123883 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 25988μs p50: 1594μs p99: 1063364μs Throughput: 890.6751026563187 Query Size: 3
+
+246387 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1745μs p50: 1503μs p99: 3555μs Throughput: 899.3217439179695 Query Size: 3
+
+368511 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1724μs p50: 1489μs p99: 3444μs Throughput: 902.0671909757735 Query Size: 3
+
+490440 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1732μs p50: 1508μs p99: 3413μs Throughput: 905.5552568049466 Query Size: 3
+
+552933 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2349μs p50: 1885μs p99: 6908μs Throughput: 1786.5198367459939 Query Size: 3
+
+616333 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2319μs p50: 1863μs p99: 7389μs Throughput: 1754.3079408117048 Query Size: 3
+
+678672 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2270μs p50: 1879μs p99: 6946μs Throughput: 1781.4391562187284 Query Size: 3
+
+740603 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2205μs p50: 1889μs p99: 6209μs Throughput: 1791.0076845525493 Query Size: 3
+
+783024 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 3756μs p50: 2845μs p99: 17966μs Throughput: 2647.460517658632 Query Size: 3
+
+825082 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 3444μs p50: 2769μs p99: 12320μs Throughput: 2659.4212734819816 Query Size: 3
+
+867870 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 3414μs p50: 2767μs p99: 12668μs Throughput: 2626.898848793338 Query Size: 3
+
+909906 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 3388μs p50: 2755μs p99: 12553μs Throughput: 2640.5138679008423 Query Size: 3
+
+942222 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 6576μs p50: 5130μs p99: 28865μs Throughput: 3469.2765216706885 Query Size: 3
+
+974300 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 6941μs p50: 5380μs p99: 29911μs Throughput: 3480.887134894674 Query Size: 3
+
+1006521 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 6617μs p50: 5312μs p99: 25249μs Throughput: 3480.5498350954413 Query Size: 3
+
+1038702 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 6916μs p50: 5337μs p99: 30639μs Throughput: 3485.462771137813 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+134177 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 127695ms
+
+211181 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 77000ms
+
+281679 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 70495ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124145 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2304μs p50: 1850μs p99: 9320μs Throughput: 888.7559637657091 Query Size: 3
+
+247384 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2007μs p50: 1753μs p99: 3750μs Throughput: 899.3064850360913 Query Size: 3
+
+369227 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1981μs p50: 1732μs p99: 3685μs Throughput: 904.0989166587203 Query Size: 3
+
+491706 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2046μs p50: 1775μs p99: 3922μs Throughput: 903.5452466308332 Query Size: 3
+
+554194 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2863μs p50: 2261μs p99: 11164μs Throughput: 1778.8987499110492 Query Size: 3
+
+617193 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2733μs p50: 2262μs p99: 8553μs Throughput: 1758.6227803844797 Query Size: 3
+
+679689 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2623μs p50: 2252μs p99: 7340μs Throughput: 1780.3816421585343 Query Size: 3
+
+741942 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2646μs p50: 2257μs p99: 7523μs Throughput: 1780.2265666908174 Query Size: 3
+
+784048 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4666μs p50: 3651μs p99: 20538μs Throughput: 2642.497415181741 Query Size: 3
+
+826344 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4439μs p50: 3577μs p99: 17437μs Throughput: 2639.453956950525 Query Size: 3
+
+868858 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4738μs p50: 3734μs p99: 20837μs Throughput: 2624.2377732194377 Query Size: 3
+
+910675 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4482μs p50: 3676μs p99: 16226μs Throughput: 2649.474760856796 Query Size: 3
+
+943149 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 12005μs p50: 9459μs p99: 52509μs Throughput: 3461.990883837287 Query Size: 3
+
+975247 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 11855μs p50: 9432μs p99: 48117μs Throughput: 3475.543426640166 Query Size: 3
+
+1007442 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 11393μs p50: 9042μs p99: 49461μs Throughput: 3476.2936939710544 Query Size: 3
+
+1039751 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 11250μs p50: 9005μs p99: 48679μs Throughput: 3466.392995342525 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+148051 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 141463ms
+
+228463 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 80408ms
+
+301961 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 73496ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123423 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2343μs p50: 1784μs p99: 11381μs Throughput: 893.9551027634685 Query Size: 3
+
+245702 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1988μs p50: 1715μs p99: 3995μs Throughput: 904.4221254915823 Query Size: 3
+
+368123 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1935μs p50: 1713μs p99: 3794μs Throughput: 904.828257768706 Query Size: 3
+
+490391 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2012μs p50: 1730μs p99: 4153μs Throughput: 905.7074083337728 Query Size: 3
+
+552796 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2864μs p50: 2182μs p99: 10476μs Throughput: 1789.0045294135207 Query Size: 3
+
+616164 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2712μs p50: 2195μs p99: 9033μs Throughput: 1757.6713618760434 Query Size: 3
+
+678400 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2653μs p50: 2192μs p99: 8365μs Throughput: 1786.5965860421882 Query Size: 3
+
+740950 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2593μs p50: 2213μs p99: 7596μs Throughput: 1778.0515231304823 Query Size: 3
+
+783045 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4291μs p50: 3363μs p99: 17061μs Throughput: 2639.5682913948162 Query Size: 3
+
+825101 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4288μs p50: 3373μs p99: 16992μs Throughput: 2650.5168615624534 Query Size: 3
+
+867745 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4102μs p50: 3261μs p99: 16321μs Throughput: 2624.148677296257 Query Size: 3
+
+909615 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4067μs p50: 3239μs p99: 15858μs Throughput: 2646.1971574612007 Query Size: 3
+
+941963 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9660μs p50: 6961μs p99: 46162μs Throughput: 3468.4746396937353 Query Size: 3
+
+974429 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 9532μs p50: 6935μs p99: 42165μs Throughput: 3437.8902092331728 Query Size: 3
+
+1006148 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 10180μs p50: 7118μs p99: 54011μs Throughput: 3492.185411280611 Query Size: 3
+
+1038532 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 10323μs p50: 7138μs p99: 56844μs Throughput: 3470.0139952122813 Query Size: 3
+
+Killed Coordinator
+Killed Coordinator
+
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+131479 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 123955ms
+
+213557 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 82073ms
+
+284568 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 71005ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124969 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 5465μs p50: 1788μs p99: 128419μs Throughput: 882.8714890484026 Query Size: 3
+
+248272 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1991μs p50: 1700μs p99: 3958μs Throughput: 900.4513043977566 Query Size: 3
+
+369867 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1932μs p50: 1686μs p99: 3667μs Throughput: 907.1918268615505 Query Size: 3
+
+491293 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2000μs p50: 1729μs p99: 4082μs Throughput: 906.9303574237873 Query Size: 3
+
+553239 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2936μs p50: 2253μs p99: 13969μs Throughput: 1779.6828479220555 Query Size: 3
+
+616184 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2763μs p50: 2239μs p99: 9395μs Throughput: 1760.3444632853473 Query Size: 3
+
+678496 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2687μs p50: 2246μs p99: 8131μs Throughput: 1787.5287988114517 Query Size: 3
+
+740813 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2570μs p50: 2242μs p99: 6980μs Throughput: 1785.9753376081271 Query Size: 3
+
+783339 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4308μs p50: 3427μs p99: 16529μs Throughput: 2630.32995164991 Query Size: 3
+
+825363 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4265μs p50: 3407μs p99: 16765μs Throughput: 2644.8933729365203 Query Size: 3
+
+867776 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4141μs p50: 3402μs p99: 14644μs Throughput: 2636.2205299488915 Query Size: 3
+
+910044 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4167μs p50: 3379μs p99: 15666μs Throughput: 2634.736455271631 Query Size: 3
+
+942220 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9730μs p50: 7477μs p99: 46653μs Throughput: 3470.7207185873162 Query Size: 3
+
+974486 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 10203μs p50: 7680μs p99: 52149μs Throughput: 3461.603816934284 Query Size: 3
+
+1006470 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 10520μs p50: 7955μs p99: 50601μs Throughput: 3484.5905588701894 Query Size: 3
+
+1038786 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 10179μs p50: 7628μs p99: 50883μs Throughput: 3471.111220084237 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+129452 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 123313ms
+
+211533 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 82077ms
+
+280406 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 68870ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124527 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2127μs p50: 1624μs p99: 9402μs Throughput: 886.3545177698251 Query Size: 3
+
+248219 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1833μs p50: 1547μs p99: 3950μs Throughput: 893.7126755334451 Query Size: 3
+
+370678 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1769μs p50: 1544μs p99: 3737μs Throughput: 901.1109035252566 Query Size: 3
+
+493572 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1805μs p50: 1550μs p99: 3851μs Throughput: 897.3729421574334 Query Size: 3
+
+556316 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2707μs p50: 2110μs p99: 10260μs Throughput: 1775.7312370295642 Query Size: 3
+
+619105 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2625μs p50: 2097μs p99: 9098μs Throughput: 1760.9218983333747 Query Size: 3
+
+681656 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2504μs p50: 2090μs p99: 7706μs Throughput: 1780.8956099779512 Query Size: 3
+
+743683 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2505μs p50: 2093μs p99: 7527μs Throughput: 1787.7159279435657 Query Size: 3
+
+786264 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4563μs p50: 3470μs p99: 20784μs Throughput: 2629.892337094821 Query Size: 3
+
+828460 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4243μs p50: 3409μs p99: 15927μs Throughput: 2635.657162812428 Query Size: 3
+
+870748 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4233μs p50: 3416μs p99: 16246μs Throughput: 2632.6820780182543 Query Size: 3
+
+912880 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4218μs p50: 3373μs p99: 15999μs Throughput: 2639.8681757036675 Query Size: 3
+
+945140 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 10589μs p50: 8136μs p99: 47157μs Throughput: 3467.7381084187273 Query Size: 3
+
+977298 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 10970μs p50: 8500μs p99: 45934μs Throughput: 3471.546438909614 Query Size: 3
+
+1009526 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 10470μs p50: 8183μs p99: 43185μs Throughput: 3467.391294159016 Query Size: 3
+
+1041734 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 10904μs p50: 8329μs p99: 49547μs Throughput: 3469.6192096200994 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+138246 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 131625ms
+
+215422 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 77172ms
+
+286191 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 70767ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123697 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2016μs p50: 1726μs p99: 4883μs Throughput: 891.9374892444182 Query Size: 3
+
+246262 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1995μs p50: 1709μs p99: 3998μs Throughput: 899.9807932215599 Query Size: 3
+
+368362 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1934μs p50: 1714μs p99: 3761μs Throughput: 902.5351641870514 Query Size: 3
+
+489868 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1931μs p50: 1713μs p99: 3713μs Throughput: 909.1075947930201 Query Size: 3
+
+551828 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2584μs p50: 2066μs p99: 8191μs Throughput: 1788.612740513996 Query Size: 3
+
+615051 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2452μs p50: 2051μs p99: 7076μs Throughput: 1760.9020018839515 Query Size: 3
+
+677261 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2428μs p50: 2068μs p99: 6829μs Throughput: 1790.7342993995426 Query Size: 3
+
+739531 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2400μs p50: 2093μs p99: 6876μs Throughput: 1790.3928839365242 Query Size: 3
+
+781805 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 3869μs p50: 3168μs p99: 14347μs Throughput: 2654.1272651357413 Query Size: 3
+
+824103 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 3767μs p50: 3133μs p99: 13043μs Throughput: 2651.982072928878 Query Size: 3
+
+866384 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 3879μs p50: 3170μs p99: 13926μs Throughput: 2650.041064553205 Query Size: 3
+
+908565 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 3923μs p50: 3160μs p99: 15567μs Throughput: 2654.680859548118 Query Size: 3
+
+940945 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 7427μs p50: 6040μs p99: 28474μs Throughput: 3482.2198940413855 Query Size: 3
+
+973212 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 7613μs p50: 5973μs p99: 35562μs Throughput: 3473.804806681229 Query Size: 3
+
+1005373 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 7562μs p50: 5807μs p99: 41154μs Throughput: 3476.5525066935393 Query Size: 3
+
+1037352 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 7814μs p50: 6112μs p99: 37957μs Throughput: 3500.66933221535 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+141405 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 134594ms
+
+219230 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 77821ms
+
+291145 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 71912ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124270 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 14315μs p50: 1762μs p99: 545762μs Throughput: 887.8948891080487 Query Size: 3
+
+247465 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1975μs p50: 1701μs p99: 3873μs Throughput: 898.7935639857969 Query Size: 3
+
+370035 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1919μs p50: 1676μs p99: 3721μs Throughput: 905.525475958005 Query Size: 3
+
+492754 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1966μs p50: 1706μs p99: 3842μs Throughput: 903.1260457808481 Query Size: 3
+
+554787 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2808μs p50: 2148μs p99: 10712μs Throughput: 1790.5069997463715 Query Size: 3
+
+618251 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2599μs p50: 2120μs p99: 8073μs Throughput: 1756.3041207919346 Query Size: 3
+
+680695 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2521μs p50: 2123μs p99: 7192μs Throughput: 1779.7691154148688 Query Size: 3
+
+742638 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2540μs p50: 2139μs p99: 7526μs Throughput: 1788.7454414115173 Query Size: 3
+
+785136 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 3895μs p50: 3051μs p99: 15821μs Throughput: 2637.1512332836105 Query Size: 3
+
+827311 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4125μs p50: 3168μs p99: 18423μs Throughput: 2641.028879376342 Query Size: 3
+
+869584 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4114μs p50: 3312μs p99: 16135μs Throughput: 2638.6151301936893 Query Size: 3
+
+911675 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4074μs p50: 3271μs p99: 16130μs Throughput: 2647.8184460847997 Query Size: 3
+
+943980 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9090μs p50: 7002μs p99: 40523μs Throughput: 3479.6599111017854 Query Size: 3
+
+976275 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8728μs p50: 6948μs p99: 33481μs Throughput: 3468.8093486992448 Query Size: 3
+
+1008416 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 9349μs p50: 7121μs p99: 44228μs Throughput: 3474.808693701186 Query Size: 3
+
+1040486 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8896μs p50: 7095μs p99: 35480μs Throughput: 3487.9492874147886 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+138313 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 131918ms
+
+223048 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 84731ms
+
+296859 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 73808ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123453 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2108μs p50: 1772μs p99: 6413μs Throughput: 893.7562078219743 Query Size: 3
+
+246355 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2020μs p50: 1736μs p99: 3948μs Throughput: 899.7020415929003 Query Size: 3
+
+368163 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1985μs p50: 1732μs p99: 3867μs Throughput: 904.6604305328592 Query Size: 3
+
+490721 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1948μs p50: 1740μs p99: 3701μs Throughput: 903.3593325811174 Query Size: 3
+
+553073 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2627μs p50: 2152μs p99: 7576μs Throughput: 1782.0921763877816 Query Size: 3
+
+615997 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2605μs p50: 2151μs p99: 7367μs Throughput: 1763.2929015389948 Query Size: 3
+
+678477 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2581μs p50: 2147μs p99: 7186μs Throughput: 1786.0068040181454 Query Size: 3
+
+740858 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2558μs p50: 2190μs p99: 7473μs Throughput: 1782.195358057785 Query Size: 3
+
+783002 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4512μs p50: 3441μs p99: 20852μs Throughput: 2644.784558022614 Query Size: 3
+
+825186 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4064μs p50: 3363μs p99: 13863μs Throughput: 2648.448678120974 Query Size: 3
+
+867486 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4133μs p50: 3401μs p99: 14836μs Throughput: 2643.606130909121 Query Size: 3
+
+909614 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4051μs p50: 3330μs p99: 14372μs Throughput: 2651.985927314151 Query Size: 3
+
+941834 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 8661μs p50: 6893μs p99: 35839μs Throughput: 3496.447366787904 Query Size: 3
+
+974055 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8602μs p50: 6988μs p99: 32839μs Throughput: 3493.81904565555 Query Size: 3
+
+1006521 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8846μs p50: 6992μs p99: 37615μs Throughput: 3464.590811526881 Query Size: 3
+
+1038672 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8802μs p50: 6984μs p99: 35881μs Throughput: 3470.7550590405176 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+154043 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 147003ms
+
+233060 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 79013ms
+
+299926 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 66863ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123959 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2215μs p50: 1814μs p99: 7456μs Throughput: 890.2439392629869 Query Size: 3
+
+247611 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2002μs p50: 1748μs p99: 3848μs Throughput: 897.7017872106368 Query Size: 3
+
+370406 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 2008μs p50: 1747μs p99: 3772μs Throughput: 902.494685429324 Query Size: 3
+
+492962 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1995μs p50: 1758μs p99: 3908μs Throughput: 901.2186020792732 Query Size: 3
+
+554947 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2715μs p50: 2190μs p99: 8115μs Throughput: 1784.4929426409406 Query Size: 3
+
+617985 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2672μs p50: 2178μs p99: 8131μs Throughput: 1762.4369730043545 Query Size: 3
+
+680812 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2576μs p50: 2174μs p99: 7044μs Throughput: 1775.2076611782682 Query Size: 3
+
+742361 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2580μs p50: 2193μs p99: 7232μs Throughput: 1796.0819340369367 Query Size: 3
+
+785444 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4324μs p50: 3378μs p99: 18556μs Throughput: 2615.0349532562614 Query Size: 3
+
+827264 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4080μs p50: 3311μs p99: 14771μs Throughput: 2642.5665123492863 Query Size: 3
+
+869540 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4244μs p50: 3423μs p99: 15925μs Throughput: 2640.0176662372182 Query Size: 3
+
+911534 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4259μs p50: 3431μs p99: 16271μs Throughput: 2654.863740630108 Query Size: 3
+
+944030 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9396μs p50: 7318μs p99: 40266μs Throughput: 3468.9888501565465 Query Size: 3
+
+976107 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 10452μs p50: 7762μs p99: 50231μs Throughput: 3480.7531764342507 Query Size: 3
+
+1008390 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 9889μs p50: 7691μs p99: 40372μs Throughput: 3469.8980783663087 Query Size: 3
+
+1040395 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 9615μs p50: 7533μs p99: 38587μs Throughput: 3490.230275309246 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+133250 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 126535ms
+
+213245 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 79991ms
+
+285260 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 72013ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124311 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2199μs p50: 1825μs p99: 8007μs Throughput: 887.5735913307831 Query Size: 3
+
+247211 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2021μs p50: 1750μs p99: 3853μs Throughput: 900.8865675029863 Query Size: 3
+
+369697 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 2077μs p50: 1772μs p99: 4101μs Throughput: 900.7820889576341 Query Size: 3
+
+491499 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2044μs p50: 1778μs p99: 3998μs Throughput: 905.0931113914235 Query Size: 3
+
+554173 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 3157μs p50: 2409μs p99: 17948μs Throughput: 1779.671626998131 Query Size: 3
+
+617405 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2818μs p50: 2361μs p99: 9081μs Throughput: 1752.9564018518347 Query Size: 3
+
+679947 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2717μs p50: 2336μs p99: 8182μs Throughput: 1774.5976263267764 Query Size: 3
+
+741920 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2683μs p50: 2342μs p99: 7084μs Throughput: 1782.7495659138756 Query Size: 3
+
+784130 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4609μs p50: 3650μs p99: 19277μs Throughput: 2641.38995487067 Query Size: 3
+
+826331 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4759μs p50: 3739μs p99: 21296μs Throughput: 2644.3670825828913 Query Size: 3
+
+868461 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4783μs p50: 3842μs p99: 19409μs Throughput: 2651.0105789252802 Query Size: 3
+
+910906 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4680μs p50: 3751μs p99: 19308μs Throughput: 2636.9812673317856 Query Size: 3
+
+943065 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 13306μs p50: 10441μs p99: 54329μs Throughput: 3475.000167875625 Query Size: 3
+
+975307 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 13679μs p50: 10792μs p99: 59493μs Throughput: 3469.531811198644 Query Size: 3
+
+1007352 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 13650μs p50: 10744μs p99: 54914μs Throughput: 3485.860072272122 Query Size: 3
+
+1039690 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 13008μs p50: 10137μs p99: 55965μs Throughput: 3470.2174010193507 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+130548 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 123528ms
+
+204070 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 73518ms
+
+271877 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 67804ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123475 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 1858μs p50: 1489μs p99: 6941μs Throughput: 893.5476227127131 Query Size: 3
+
+245636 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1673μs p50: 1430μs p99: 3328μs Throughput: 904.5670318609104 Query Size: 3
+
+368476 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1645μs p50: 1423μs p99: 3269μs Throughput: 901.7550312680597 Query Size: 3
+
+490070 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1722μs p50: 1482μs p99: 3418μs Throughput: 907.7129103024978 Query Size: 3
+
+551763 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2422μs p50: 1909μs p99: 8199μs Throughput: 1789.8198857218613 Query Size: 3
+
+615365 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2265μs p50: 1895μs p99: 6310μs Throughput: 1751.4528423532072 Query Size: 3
+
+677482 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2234μs p50: 1888μs p99: 6242μs Throughput: 1784.10786551477 Query Size: 3
+
+739843 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2231μs p50: 1899μs p99: 6809μs Throughput: 1780.9419512043132 Query Size: 3
+
+781720 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4034μs p50: 3178μs p99: 16360μs Throughput: 2657.333289628886 Query Size: 3
+
+824264 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 3770μs p50: 3077μs p99: 13827μs Throughput: 2640.421857790452 Query Size: 3
+
+866971 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 3775μs p50: 3047μs p99: 15015μs Throughput: 2612.0111871153786 Query Size: 3
+
+908852 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 3868μs p50: 3090μs p99: 15734μs Throughput: 2634.8434927893527 Query Size: 3
+
+940889 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9591μs p50: 7008μs p99: 52164μs Throughput: 3485.329837374622 Query Size: 3
+
+973089 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8744μs p50: 6854μs p99: 37388μs Throughput: 3483.907849596187 Query Size: 3
+
+1005292 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8693μs p50: 6824μs p99: 36604μs Throughput: 3484.158481507404 Query Size: 3
+
+1037587 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8455μs p50: 6674μs p99: 36414μs Throughput: 3472.4500513247444 Query Size: 3
+
+Killed Coordinator
+
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+130386 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 123240ms
+
+210249 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 79859ms
+
+281396 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 71145ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123534 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2191μs p50: 1683μs p99: 9618μs Throughput: 893.1634371206712 Query Size: 3
+
+247083 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1897μs p50: 1600μs p99: 3702μs Throughput: 894.2668354415039 Query Size: 3
+
+370130 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1852μs p50: 1605μs p99: 3660μs Throughput: 897.862616876894 Query Size: 3
+
+492615 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1869μs p50: 1605μs p99: 3546μs Throughput: 904.6874740423527 Query Size: 3
+
+555297 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2665μs p50: 2071μs p99: 10162μs Throughput: 1777.806239601044 Query Size: 3
+
+618069 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2493μs p50: 2069μs p99: 7908μs Throughput: 1763.735597628237 Query Size: 3
+
+680504 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2463μs p50: 2079μs p99: 6970μs Throughput: 1787.9421671254947 Query Size: 3
+
+742607 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2426μs p50: 2060μs p99: 6583μs Throughput: 1792.694873365682 Query Size: 3
+
+784964 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4479μs p50: 3419μs p99: 21959μs Throughput: 2653.3117470228917 Query Size: 3
+
+827321 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4052μs p50: 3305μs p99: 14576μs Throughput: 2646.6593709854583 Query Size: 3
+
+869687 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 3959μs p50: 3257μs p99: 14162μs Throughput: 2639.1297221586356 Query Size: 3
+
+912102 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 3939μs p50: 3228μs p99: 14679μs Throughput: 2629.2938163336794 Query Size: 3
+
+944065 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 9146μs p50: 7291μs p99: 38844μs Throughput: 3482.8140687324403 Query Size: 3
+
+976443 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 9007μs p50: 7256μs p99: 37059μs Throughput: 3463.0189312708485 Query Size: 3
+
+1008460 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 9461μs p50: 7314μs p99: 45465μs Throughput: 3482.461004695241 Query Size: 3
+
+1040505 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8947μs p50: 7082μs p99: 38408μs Throughput: 3500.758419393656 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+133901 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 127073ms
+
+213272 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 79367ms
+
+285254 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 71979ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124232 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2273μs p50: 1749μs p99: 9534μs Throughput: 888.1937447222136 Query Size: 3
+
+247407 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1856μs p50: 1579μs p99: 4042μs Throughput: 899.275949247673 Query Size: 3
+
+369449 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1818μs p50: 1566μs p99: 3767μs Throughput: 902.4342697033884 Query Size: 3
+
+490651 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1865μs p50: 1592μs p99: 3991μs Throughput: 911.1836218672979 Query Size: 3
+
+553198 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2757μs p50: 2126μs p99: 10574μs Throughput: 1777.5270202282452 Query Size: 3
+
+616259 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2625μs p50: 2121μs p99: 8162μs Throughput: 1754.5436976979183 Query Size: 3
+
+678354 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2600μs p50: 2128μs p99: 8084μs Throughput: 1788.4214304307743 Query Size: 3
+
+740959 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2597μs p50: 2134μs p99: 8848μs Throughput: 1778.3948612554648 Query Size: 3
+
+783191 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4593μs p50: 3555μs p99: 20259μs Throughput: 2630.5533027437746 Query Size: 3
+
+825270 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4756μs p50: 3683μs p99: 22171μs Throughput: 2641.202833391445 Query Size: 3
+
+867835 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 5110μs p50: 4076μs p99: 20242μs Throughput: 2622.0060260510036 Query Size: 3
+
+909893 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4873μs p50: 3999μs p99: 17476μs Throughput: 2632.6875881107244 Query Size: 3
+
+941981 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 16440μs p50: 13072μs p99: 63187μs Throughput: 3478.515765418557 Query Size: 3
+
+974256 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 16113μs p50: 12951μs p99: 59109μs Throughput: 3473.6298333784957 Query Size: 3
+
+1006643 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 14956μs p50: 12257μs p99: 51435μs Throughput: 3454.273914031078 Query Size: 3
+
+1038625 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 16609μs p50: 12868μs p99: 67909μs Throughput: 3477.560904691312 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+129402 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 122486ms
+
+203283 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 73878ms
+
+269064 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 65779ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124583 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2043μs p50: 1664μs p99: 7146μs Throughput: 885.7852328751613 Query Size: 3
+
+247508 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1870μs p50: 1596μs p99: 3675μs Throughput: 898.7399865392865 Query Size: 3
+
+369449 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1851μs p50: 1593μs p99: 3655μs Throughput: 903.3498388344925 Query Size: 3
+
+491641 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1832μs p50: 1603μs p99: 3567μs Throughput: 904.8236805128054 Query Size: 3
+
+554184 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2550μs p50: 1958μs p99: 8474μs Throughput: 1782.261562645357 Query Size: 3
+
+616999 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2371μs p50: 1960μs p99: 6868μs Throughput: 1766.5947014464396 Query Size: 3
+
+679629 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2354μs p50: 1963μs p99: 6708μs Throughput: 1785.057730035609 Query Size: 3
+
+741509 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2286μs p50: 1969μs p99: 6545μs Throughput: 1796.2331516904703 Query Size: 3
+
+784010 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 3801μs p50: 3065μs p99: 14358μs Throughput: 2653.32790990944 Query Size: 3
+
+826438 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 3678μs p50: 3010μs p99: 13588μs Throughput: 2642.42893253219 Query Size: 3
+
+869074 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 3607μs p50: 2971μs p99: 13149μs Throughput: 2617.642981972 Query Size: 3
+
+910907 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 3699μs p50: 3014μs p99: 13766μs Throughput: 2641.8760387053526 Query Size: 3
+
+943188 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 7361μs p50: 5816μs p99: 32877μs Throughput: 3472.331468813656 Query Size: 3
+
+975451 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 7320μs p50: 5807μs p99: 32812μs Throughput: 3466.195627565608 Query Size: 3
+
+1007453 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 7734μs p50: 6019μs p99: 36232μs Throughput: 3487.227353606184 Query Size: 3
+
+1039648 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 7473μs p50: 5808μs p99: 34186μs Throughput: 3486.581000841616 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+140672 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 134065ms
+
+222385 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 81709ms
+
+294994 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 72607ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+123915 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2208μs p50: 1774μs p99: 9368μs Throughput: 890.3430999473991 Query Size: 3
+
+245864 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1960μs p50: 1735μs p99: 3717μs Throughput: 902.9657146212122 Query Size: 3
+
+368068 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1974μs p50: 1713μs p99: 3728μs Throughput: 904.9120809533462 Query Size: 3
+
+490315 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1923μs p50: 1728μs p99: 3585μs Throughput: 906.0269061914921 Query Size: 3
+
+553089 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2692μs p50: 2130μs p99: 9501μs Throughput: 1780.104050579369 Query Size: 3
+
+616035 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2527μs p50: 2118μs p99: 7001μs Throughput: 1760.3591169803367 Query Size: 3
+
+678387 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2491μs p50: 2107μs p99: 6586μs Throughput: 1786.668232550292 Query Size: 3
+
+740527 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2599μs p50: 2155μs p99: 8897μs Throughput: 1790.6680196708887 Query Size: 3
+
+782798 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4210μs p50: 3274μs p99: 18744μs Throughput: 2654.6997855892 Query Size: 3
+
+825209 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4225μs p50: 3355μs p99: 17639μs Throughput: 2645.2590418409573 Query Size: 3
+
+867851 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4095μs p50: 3341μs p99: 14848μs Throughput: 2618.6299976864025 Query Size: 3
+
+909692 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4073μs p50: 3325μs p99: 15255μs Throughput: 2642.416097056423 Query Size: 3
+
+942162 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 8756μs p50: 6986μs p99: 35461μs Throughput: 3452.788405295528 Query Size: 3
+
+974176 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 9158μs p50: 7253μs p99: 36995μs Throughput: 3471.309497302867 Query Size: 3
+
+1006385 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8689μs p50: 6983μs p99: 34174μs Throughput: 3469.0176427084757 Query Size: 3
+
+1038274 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 9572μs p50: 7293μs p99: 49191μs Throughput: 3501.9367223561767 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+135756 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 128925ms
+
+214585 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 78825ms
+
+288147 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 73559ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124252 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 135289μs p50: 1903μs p99: 2799629μs Throughput: 887.9588586091431 Query Size: 3
+
+247471 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2031μs p50: 1750μs p99: 3808μs Throughput: 898.5121017251669 Query Size: 3
+
+370146 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1968μs p50: 1730μs p99: 3655μs Throughput: 904.293378099403 Query Size: 3
+
+492793 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 2001μs p50: 1757μs p99: 3733μs Throughput: 902.3883379784313 Query Size: 3
+
+555029 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2886μs p50: 2213μs p99: 11203μs Throughput: 1781.5795320000395 Query Size: 3
+
+618201 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2653μs p50: 2168μs p99: 8450μs Throughput: 1756.728459825352 Query Size: 3
+
+680546 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2654μs p50: 2168μs p99: 7776μs Throughput: 1782.5354182008784 Query Size: 3
+
+742574 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2623μs p50: 2204μs p99: 7754μs Throughput: 1789.1706745130487 Query Size: 3
+
+785114 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4053μs p50: 3266μs p99: 15446μs Throughput: 2638.916108942926 Query Size: 3
+
+827385 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4223μs p50: 3273μs p99: 19631μs Throughput: 2636.843622708796 Query Size: 3
+
+869282 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4089μs p50: 3380μs p99: 14182μs Throughput: 2658.378379506116 Query Size: 3
+
+911814 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4075μs p50: 3350μs p99: 14434μs Throughput: 2640.8290298186294 Query Size: 3
+
+944130 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 8648μs p50: 6735μs p99: 38295μs Throughput: 3464.8716155405405 Query Size: 3
+
+976336 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8351μs p50: 6679μs p99: 34729μs Throughput: 3466.281754989665 Query Size: 3
+
+1008865 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8566μs p50: 6830μs p99: 34775μs Throughput: 3431.0471566801825 Query Size: 3
+
+1040888 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 8787μs p50: 6711μs p99: 42419μs Throughput: 3457.361107030545 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+134952 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 127410ms
+
+211767 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 76812ms
+
+280585 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 68816ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124367 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2122μs p50: 1742μs p99: 7336μs Throughput: 886.9960005407023 Query Size: 3
+
+247181 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 1987μs p50: 1698μs p99: 3919μs Throughput: 900.5159102182175 Query Size: 3
+
+369079 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 1959μs p50: 1690μs p99: 3763μs Throughput: 904.7594898064459 Query Size: 3
+
+491989 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1916μs p50: 1668μs p99: 3712μs Throughput: 901.1417324950131 Query Size: 3
+
+554042 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2790μs p50: 2127μs p99: 10543μs Throughput: 1782.493697607084 Query Size: 3
+
+617322 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2619μs p50: 2115μs p99: 8018μs Throughput: 1753.8799894045442 Query Size: 3
+
+679573 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2447μs p50: 2117μs p99: 6642μs Throughput: 1782.573274500063 Query Size: 3
+
+741566 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2463μs p50: 2129μs p99: 6945μs Throughput: 1790.909548204092 Query Size: 3
+
+783898 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4370μs p50: 3288μs p99: 24544μs Throughput: 2650.6537765357048 Query Size: 3
+
+826286 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 3916μs p50: 3211μs p99: 14265μs Throughput: 2642.212442170247 Query Size: 3
+
+868395 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4025μs p50: 3262μs p99: 15229μs Throughput: 2650.6537303555306 Query Size: 3
+
+910839 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 3889μs p50: 3203μs p99: 13708μs Throughput: 2640.700084061416 Query Size: 3
+
+943121 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 4000 Queries: 109999 Average: 8178μs p50: 6438μs p99: 35593μs Throughput: 3468.29897200331 Query Size: 3
+
+975160 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 4000 Queries: 109999 Average: 8222μs p50: 6562μs p99: 33430μs Throughput: 3485.7611967145676 Query Size: 3
+
+1007380 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 4000 Queries: 109999 Average: 8243μs p50: 6457μs p99: 37058μs Throughput: 3481.801859897446 Query Size: 3
+
+1039852 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 4000 Queries: 109999 Average: 7980μs p50: 6300μs p99: 35331μs Throughput: 3454.7311916850563 Query Size: 3
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+138207 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 131324ms
+
+216920 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 78709ms
+
+285209 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 2 Time: 68285ms
+
+Executing Query
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Querying!
+
+124212 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 1000 Queries: 109999 Average: 2145μs p50: 1781μs p99: 6854μs Throughput: 888.2784064852291 Query Size: 3
+
+247991 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 1000 Queries: 109999 Average: 2029μs p50: 1744μs p99: 4105μs Throughput: 894.8972205638913 Query Size: 3
+
+369792 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 1000 Queries: 109999 Average: 2011μs p50: 1749μs p99: 3906μs Throughput: 907.2042381710334 Query Size: 3
+
+491957 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 1000 Queries: 109999 Average: 1998μs p50: 1757μs p99: 3800μs Throughput: 901.4612456967208 Query Size: 3
+
+554191 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 2000 Queries: 109999 Average: 2758μs p50: 2194μs p99: 10502μs Throughput: 1779.2848070326215 Query Size: 3
+
+617044 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 2000 Queries: 109999 Average: 2685μs p50: 2201μs p99: 9133μs Throughput: 1762.5608665249472 Query Size: 3
+
+679425 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 2000 Queries: 109999 Average: 2634μs p50: 2196μs p99: 8277μs Throughput: 1788.4187945670524 Query Size: 3
+
+741511 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 2000 Queries: 109999 Average: 2583μs p50: 2216μs p99: 7828μs Throughput: 1793.8794774074122 Query Size: 3
+
+784136 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 0 Rate: 3000 Queries: 109999 Average: 4439μs p50: 3584μs p99: 17313μs Throughput: 2638.9419925214765 Query Size: 3
+
+826424 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 1 Rate: 3000 Queries: 109999 Average: 4333μs p50: 3490μs p99: 17545μs Throughput: 2636.97015645048 Query Size: 3
+
+868575 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 2 Rate: 3000 Queries: 109999 Average: 4350μs p50: 3550μs p99: 16620μs Throughput: 2643.449575196287 Query Size: 3
+
+910947 [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Trial No: 3 Rate: 3000 Queries: 109999 Average: 4293μs p50: 3499μs p99: 16009μs Throughput: 2637.3802698301643 Query Size: 3
+
+
+Killed Coordinator
+Starting Coordinator
+Loading
+0    [main] INFO  edu.stanford.futuredata.uniservesolr.SolrExecutable  - Loading data!
+
+138017 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 0 Time: 131378ms
+
+217086 [main] INFO  edu.stanford.futuredata.uniserve.broker.Broker  - Write completed. Rows: 999999. Version: 1 Time: 79065ms
+
+308711 [grpc-default-executor-20] WARN  edu.stanford.futuredata.uniserve.broker.Broker  - Write query RPC failed for shard 29
+
+Killed Coordinator

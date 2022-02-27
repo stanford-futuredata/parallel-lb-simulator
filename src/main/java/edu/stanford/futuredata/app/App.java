@@ -15,15 +15,17 @@ import java.util.concurrent.*;
 import java.util.Collections;
 
 public class App {
-    public static int NUM_MACHINES = 10;
+    public static int NUM_MACHINES = 5;
     public static int NUM_CORES_PER_MACHINE = 4;
     public static int NUM_SHARDS_PER_MACHINE = 20;
-    public static int TICKS_PER_ACCESS = 5;
+    public static int TICKS_PER_ACCESS = 2;
     public static int QUERY_SIZE = 3;
 
-    public static double AVERAGE_QUERY_RATE = 0.1;
-    public static int NUM_TRIALS = 20000;
-    public static int NUM_SIMULATIONS = 5000;
+    public static double AVERAGE_QUERY_RATE = 0.1565;
+    public static int NUM_TRIALS = 10000000;
+    public static int NUM_SIMULATIONS = 10000;
+
+    public static int TICK_SCALE_FACTOR = 200; // How many ticks in 1 microsecond
 
     public static int TICK = 0;
 
@@ -196,7 +198,8 @@ public class App {
 
         System.out.println(NUM_MACHINES + " machines; " + NUM_SHARDS_PER_MACHINE + " shards/machine; " + QUERY_SIZE + " shards/query:");
 
-        for (int simNumber = 0; simNumber < NUM_SIMULATIONS; simNumber++) {
+        double recentThroughput = 0;
+        for (int simulationNum = 0; simulationNum < NUM_SIMULATIONS; simulationNum++) {
             System.out.println();
             // -------------------- 
             // Generate queries
@@ -270,6 +273,21 @@ public class App {
 
             // Balance load of random-shards
             List<double[]> randomCalculatedAssignments = new LoadBalancer().balanceLoad(numShards, NUM_MACHINES, shardLoads, shardMemoryUsages, currentLocations, Collections.emptyMap(), NUM_SHARDS_PER_MACHINE);
+
+            System.out.println("Generated random load balanced config: ");
+            for (double[] serverShards : randomCalculatedAssignments) {
+                int randomShardId = 0;
+
+                for (double shardPercentage : serverShards) {
+                    if (shardPercentage > 0.001) {
+                        System.out.print(randomShardId + " ");
+                    }
+                    randomShardId += 1;
+                }
+                System.out.print("\t");
+            }
+            System.out.println();
+
             int serverId = 0;
             for (double[] x : randomCalculatedAssignments) {
                 int shardId = 0;
@@ -295,15 +313,36 @@ public class App {
 
             runQueries(shardIdToServer);
             List<Integer> randomPercentiles = outputResults(false, numShardsPerServer);
-            System.out.println("Avg Random 50th percentile latency: " + randomPercentiles.get(0));
-            System.out.println("Avg Random 99th percentile latency: " + randomPercentiles.get(1));
-            System.out.println("Avg Random 99.9 percentile latency: " + randomPercentiles.get(2));
+            System.out.println("Avg Random p50: " + randomPercentiles.get(0) * TICK_SCALE_FACTOR);
+            System.out.println("Avg Random p99: " + randomPercentiles.get(1) * TICK_SCALE_FACTOR);
+            System.out.println("Avg Random p999: " + randomPercentiles.get(2) * TICK_SCALE_FACTOR);
+            Integer busyTime = 0;
+            for (Integer id : serversByIndex.keySet()) {
+                Server server = serversByIndex.get(id);
+                busyTime += server.getBusyTime();
+            }
+            System.out.println("Random Throughput: " + ((double) generatedQueries.size() / ((double) busyTime / serversByIndex.size() / TICK_SCALE_FACTOR / NUM_CORES_PER_MACHINE)));
             resetState(shardIdToServer);
 
             // -------------------------------------
             // Generate load-balanced server configuration
             // -------------------------------------
             List<double[]> calculatedAssignments = new LoadBalancer().balanceLoad(numShards, NUM_MACHINES, shardLoads, shardMemoryUsages, new int[NUM_MACHINES][numShards], sampleQueries, NUM_SHARDS_PER_MACHINE);
+
+            System.out.println("Generated parallel-maximising load balanced config: ");
+            for (double[] serverShards : calculatedAssignments) {
+                int parallelShardId = 0;
+
+                for (double shardPercentage : serverShards) {
+                    if (shardPercentage > 0.001) {
+                        System.out.print(parallelShardId + " ");
+                    }
+                    parallelShardId += 1;
+                }
+                System.out.print("\t");
+            }
+            System.out.println();
+
             HashMap<Integer, Server> serverIdToServer = new HashMap<Integer, Server>();
 
             for (int i = 0; i < NUM_MACHINES; i++) {
@@ -334,7 +373,6 @@ public class App {
                             System.out.println("Added duplicate shard");
                         }
 
-                        // System.out.println("Shard " + shardId + " assigned to server " + serverId);
                     }
                     shardId += 1;
                 }
@@ -343,9 +381,11 @@ public class App {
 
             runQueries(shardIdToServer);
             List<Integer> roundRobinPercentiles = outputResults(false, numShardsPerServer);
-            System.out.println("Avg LB 50th percentile latency: " + roundRobinPercentiles.get(0));
-            System.out.println("Avg LB 99th percentile latency: " + roundRobinPercentiles.get(1));
-            System.out.println("Avg LB 99.9 percentile latency: " + roundRobinPercentiles.get(2));
+            System.out.println("Avg LB p50: " + roundRobinPercentiles.get(0) * TICK_SCALE_FACTOR);
+            System.out.println("Avg LB p99: " + roundRobinPercentiles.get(1) * TICK_SCALE_FACTOR);
+            System.out.println("Avg LB p999: " + roundRobinPercentiles.get(2) * TICK_SCALE_FACTOR);
+
+            System.out.println("LB Throughput: " + ((double) generatedQueries.size() / ((double) busyTime / serverIdToServer.size() / TICK_SCALE_FACTOR / NUM_CORES_PER_MACHINE)));
             resetState(shardIdToServer);
         }
     }

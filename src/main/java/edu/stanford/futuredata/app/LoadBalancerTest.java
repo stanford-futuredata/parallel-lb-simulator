@@ -46,32 +46,32 @@ public class LoadBalancerTest {
         int[][] currentLocations = new int[numServers][numShards];
 
         // Assign relevant shards to each server for round-robin
-        // for (int i = 0; i < numServers; i++) {            
-        //     for (int shardId = i; shardId < numShards; shardId += numServers) {
-        //         currentLocations[i][shardId] = 1;
-        //     }
-        // }
-
-        // Assign shards to servers randomly
-        List<Integer> remainingServers = new ArrayList<>();
-        HashMap<Integer, Integer> numShardsPerServer = new HashMap<Integer, Integer>();
-
-        for (int i = 0; i < numServers; i++) {
-            remainingServers.add(i);
-            numShardsPerServer.put(i, 0);
+        for (int i = 0; i < numServers; i++) {            
+            for (int shardId = i; shardId < numShards; shardId += numServers) {
+                currentLocations[i][shardId] = 1;
+            }
         }
 
-        for (int currentShardId = 0; currentShardId < numShards; currentShardId++) {
-            int serverArrayPosition = ThreadLocalRandom.current().nextInt(0, remainingServers.size());
-            int serverId = remainingServers.get(serverArrayPosition);
+        // Assign shards to servers randomly
+        // List<Integer> remainingServers = new ArrayList<>();
+        // HashMap<Integer, Integer> numShardsPerServer = new HashMap<Integer, Integer>();
 
-            numShardsPerServer.put(serverId, numShardsPerServer.get(serverId) + 1);
-            currentLocations[serverId][currentShardId] = 1;
+        // for (int i = 0; i < numServers; i++) {
+        //     remainingServers.add(i);
+        //     numShardsPerServer.put(i, 0);
+        // }
 
-            if (numShardsPerServer.get(serverId) >= maxMemory) {
-                remainingServers.remove(serverArrayPosition);
-            }
-        }       
+        // for (int currentShardId = 0; currentShardId < numShards; currentShardId++) {
+        //     int serverArrayPosition = ThreadLocalRandom.current().nextInt(0, remainingServers.size());
+        //     int serverId = remainingServers.get(serverArrayPosition);
+
+        //     numShardsPerServer.put(serverId, numShardsPerServer.get(serverId) + 1);
+        //     currentLocations[serverId][currentShardId] = 1;
+
+        //     if (numShardsPerServer.get(serverId) >= maxMemory) {
+        //         remainingServers.remove(serverArrayPosition);
+        //     }
+        // }       
 
 
         // Populate sampleQueries
@@ -107,61 +107,54 @@ public class LoadBalancerTest {
         }
 
 
-        System.out.println("Non-parallel load balanced shards: ");
-        List<double[]> calculatedAssignments = new LoadBalancer().balanceLoad(numShards, numServers, shardLoads, shardMemoryUsages, currentLocations, Collections.emptyMap(), maxMemory);
+        // System.out.println("Non-parallel load balanced shards: ");
+        // List<double[]> calculatedAssignments = new LoadBalancer().balanceLoad(numShards, numServers, shardLoads, shardMemoryUsages, currentLocations, Collections.emptyMap(), maxMemory);
 
-        int serverId = 0;
+        // int serverId = 0;
 
-        System.out.print("{");
-        for (double[] serverShards : calculatedAssignments) {
-            int shardId = 0;
-            if (serverId > 0) System.out.print(", ");
+        // System.out.print("{");
+        // for (double[] serverShards : calculatedAssignments) {
+        //     int shardId = 0;
+        //     if (serverId > 0) System.out.print(", ");
 
-            System.out.print("{");
-            boolean printedFirst = false;
-            for (double shardPercentage : serverShards) {
-                if (shardPercentage > 0.01) {
-                    if (!printedFirst) {
-                        printedFirst = true;
-                        System.out.print(shardId);
-                    } else {
-                        System.out.print(", " + shardId);
-                    }
-                }
-                shardId += 1;
-            }
-            System.out.println("}");
-            serverId += 1;
-        }
-        System.out.print("}");
+        //     System.out.print("{");
+        //     boolean printedFirst = false;
+        //     for (double shardPercentage : serverShards) {
+        //         if (shardPercentage > 0.01) {
+        //             if (!printedFirst) {
+        //                 printedFirst = true;
+        //                 System.out.print(shardId);
+        //             } else {
+        //                 System.out.print(", " + shardId);
+        //             }
+        //         }
+        //         shardId += 1;
+        //     }
+        //     System.out.println("}");
+        //     serverId += 1;
+        // }
+        // System.out.print("}");
 
         System.out.println("Parallel load balanced shards: ");
-        List<double[]> calculatedAssignmentsParallel = new LoadBalancer().balanceLoad(numShards, numServers, shardLoads, shardMemoryUsages, new int[numServers][numShards], sampleQueries, maxMemory);
+        for (int i = 0; i < 400; i++) {
+            List<double[]> calculatedAssignmentsParallel = new LoadBalancer().balanceLoad(numShards, numServers, shardLoads, shardMemoryUsages, new int[numServers][numShards], sampleQueries, maxMemory);
 
-        serverId = 0;
+            int serverId = 0;
 
-        System.out.print("{");
-        for (double[] serverShards : calculatedAssignmentsParallel) {
-            int shardId = 0;
-            if (serverId > 0) System.out.print(", ");
+            for (double[] serverShards : calculatedAssignmentsParallel) {
+                int shardId = 0;
 
-            System.out.print("{");
-            boolean printedFirst = false;
-            for (double shardPercentage : serverShards) {
-                if (shardPercentage > 0.001) {
-                    if (!printedFirst) {
-                        printedFirst = true;
-                        System.out.print(shardId);
-                    } else {
-                        System.out.print(", " + shardId);
+                for (double shardPercentage : serverShards) {
+                    if (shardPercentage > 0.001) {
+                        System.out.print(shardId + " ");
                     }
+                    shardId += 1;
                 }
-                shardId += 1;
+                System.out.print("\t");
+                serverId += 1;
             }
-            System.out.println("}");
-            serverId += 1;
+            System.out.println();
         }
-        System.out.print("}");
         // System.out.println("Num shards: " + numShards);
         // System.out.println("Num servers: " + numServers);
         // System.out.println("max memory: " + maxMemory);
@@ -194,6 +187,4 @@ public class LoadBalancerTest {
         // }
     }
 }
-
-
 
