@@ -60,10 +60,11 @@ public class Query {
     }
 
     public String toString() {
-        String returnVal = "";
+        String returnVal = "(";
         for (ShardAccess access : shardAccesses) {
-            returnVal += "\t" + access.toString() + "\n";
+            returnVal += "Shard" + access.getAssignedShard() + ",";
         }
+        returnVal += ") latency " + getLatency();
         return returnVal;
     }
 }

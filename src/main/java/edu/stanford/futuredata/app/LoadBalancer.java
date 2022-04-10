@@ -8,10 +8,155 @@ import java.util.stream.Collectors;
 
 public class LoadBalancer {
 
-    public static boolean verbose = false;
+    public static boolean verbose = true;
+    public static int minReplicationFactor = 1;
 
-    final static double mipGap = 0.05;
-    final int maxQuerySamples = 500;
+    List<double[]> lastR;
+    List<double[]> lastX;
+    double[] lastM;
+    int lastNumServers = 0;
+    int lastNumShards = 0;
+
+    final static double mipGap = 0.1;
+
+    public List<double[]> balanceLoad(Integer numShards, Integer numServers,
+                                      int[] shardLoads, int[] shardMemoryUsages, int[][] currentLocations,
+                                      Map<Set<Integer>, Integer> sampleQueries,
+                                      Integer maxMemory, int splitFactor) throws IloException {
+        assert(numShards % splitFactor == 0);
+        assert(numServers % splitFactor == 0);
+        shardLoads = shardLoads.clone();
+        double totalLoad = Arrays.stream(shardLoads).sum();
+        int serversPerSplit = numServers / splitFactor;
+        int loadPerSplit = (int) Math.round(totalLoad /splitFactor);
+        List<double[]> finalRs = new ArrayList<>();
+        for(int i = 0; i < numServers; i++) {
+            finalRs.add(new double[numShards]);
+        }
+        Map<Integer, List<Integer>> previousSplitsToShards = new HashMap<>();
+        for (int serverNum = 0; serverNum < numServers; serverNum++) {
+            int splitNum = serverNum / serversPerSplit;
+            previousSplitsToShards.putIfAbsent(splitNum, new ArrayList<>());
+            for (int shardNum = 0; shardNum < numShards; shardNum++) {
+                if (currentLocations[serverNum][shardNum] == 1 && !previousSplitsToShards.get(splitNum).contains(shardNum)) {
+                    previousSplitsToShards.get(splitNum).add(shardNum);
+                }
+            }
+        }
+        Map<Integer, List<Integer>> newSplitsToShards = new HashMap<>();
+        Map<Integer, List<Integer>> newSplitsToLoads = new HashMap<>();
+        Map<Integer, Integer> splitsNeedingMore = new HashMap<>();
+        for (int splitNum = 0; splitNum < splitFactor; splitNum++) {
+            newSplitsToShards.put(splitNum, new ArrayList<>());
+            newSplitsToLoads.put(splitNum, new ArrayList<>());
+            int currentLoad = 0;
+            int[] finalShardLoads = shardLoads;
+            previousSplitsToShards.get(splitNum).sort(Comparator.comparing(i -> finalShardLoads[i]));
+            for (int nextShard: previousSplitsToShards.get(splitNum)) {
+                int shardLoad = shardLoads[nextShard];
+                if (shardLoad == 0) {
+                    continue;
+                }
+                if (currentLoad + shardLoad <= loadPerSplit) {
+                    currentLoad += shardLoad;
+                    newSplitsToLoads.get(splitNum).add(shardLoad);
+                    shardLoads[nextShard] = 0;
+                    newSplitsToShards.get(splitNum).add(nextShard);
+                    if (currentLoad == loadPerSplit) {
+                        break;
+                    }
+                } else {
+                    assert(currentLoad < loadPerSplit);
+                    newSplitsToLoads.get(splitNum).add(loadPerSplit - currentLoad);
+                    currentLoad = loadPerSplit;
+                    shardLoads[nextShard] = currentLoad + shardLoad - loadPerSplit;
+                    assert(shardLoads[nextShard] > 0);
+                    newSplitsToShards.get(splitNum).add(nextShard);
+                    break;
+                }
+            }
+            if (currentLoad < loadPerSplit) {
+                splitsNeedingMore.put(splitNum, currentLoad);
+            }
+        }
+        for (int splitNum: splitsNeedingMore.keySet()) {
+            int currentLoad = splitsNeedingMore.get(splitNum);
+            for (int shardNum = 0; shardNum < numShards; shardNum++) {
+                int shardLoad = shardLoads[shardNum];
+                if (shardLoad == 0) {
+                    continue;
+                }
+                if (currentLoad + shardLoad <= loadPerSplit) {
+                    currentLoad += shardLoad;
+                    newSplitsToLoads.get(splitNum).add(shardLoad);
+                    shardLoads[shardNum] = 0;
+                    newSplitsToShards.get(splitNum).add(shardNum);
+                    if (currentLoad == loadPerSplit) {
+                        break;
+                    }
+                } else {
+                    assert(currentLoad < loadPerSplit);
+                    newSplitsToLoads.get(splitNum).add(loadPerSplit - currentLoad);
+                    currentLoad = loadPerSplit;
+                    shardLoads[shardNum] = currentLoad + shardLoad - loadPerSplit;
+                    assert(shardLoads[shardNum] > 0);
+                    newSplitsToShards.get(splitNum).add(shardNum);
+                    break;
+                }
+            }
+            assert(Math.abs(currentLoad - loadPerSplit) < 5); // For rounding errors.
+        }
+
+
+        for (int splitNum = 0; splitNum < splitFactor; splitNum++) {
+            List<Integer> splitShards = newSplitsToShards.get(splitNum);
+            Map<Integer, Integer> splitShardsReverseMapping = new HashMap<>();
+            for (int i = 0; i < splitShards.size(); i++) {
+                splitShardsReverseMapping.put(splitShards.get(i), i);
+            }
+            Set<Integer> splitShardsSet = new HashSet<>(splitShards);
+            List<Integer> splitShardLoads = newSplitsToLoads.get(splitNum);
+            // logger.info("{} {}", splitNum, splitShards);
+            int numSplitShards = splitShards.size();
+            int[] localShardLoads = new int[numSplitShards];
+            int[] localShardMemoryUsages = new int[numSplitShards];
+            for (int i = 0; i < numSplitShards; i++) {
+                int shardNum = splitShards.get(i);
+                localShardLoads[i] = splitShardLoads.get(i);
+                localShardMemoryUsages[i] = shardMemoryUsages[shardNum];
+            }
+            int[][] localCurrentLocations = new int[serversPerSplit][numSplitShards];
+            for (int serverNum = 0; serverNum < serversPerSplit; serverNum++) {
+                int globalServerNum = splitNum * serversPerSplit + serverNum;
+                for (int i = 0; i < numSplitShards; i++) {
+                    int shardNum = splitShards.get(i);
+                    localCurrentLocations[serverNum][i] = currentLocations[globalServerNum][shardNum];
+                }
+            }
+
+            Map<Set<Integer>, Integer> localQueries = new HashMap<>();
+            for(Set<Integer> shardSet: sampleQueries.keySet()) {
+                Set<Integer> localSet = shardSet.stream().filter(splitShardsSet::contains)
+                        .map(splitShardsReverseMapping::get).collect(Collectors.toSet());
+                if (localSet.size() > 1) {
+                    localQueries.merge(localSet, sampleQueries.get(shardSet), Integer::sum);
+                }
+            }
+            List<double[]> rs = balanceLoad(numSplitShards, serversPerSplit, localShardLoads, localShardMemoryUsages, localCurrentLocations,
+                    localQueries, maxMemory);
+
+            for (int serverNum = 0; serverNum < serversPerSplit; serverNum++) {
+                int globalServerNum = splitNum * serversPerSplit + serverNum;
+                double[] r = rs.get(serverNum);
+                double[] finalR = finalRs.get(globalServerNum);
+                for (int i = 0; i < numSplitShards; i++) {
+                    int shardNum = splitShards.get(i);
+                    finalR[shardNum] = r[i];
+                }
+            }
+        }
+        return finalRs;
+    }
 
     /**
      * Generate an assignment of shards to servers.
@@ -57,7 +202,7 @@ public class LoadBalancer {
 
         List<Set<Integer>> sampleQueryKeys = new ArrayList<>(sampleQueries.keySet());
         sampleQueryKeys = sampleQueryKeys.stream().filter(k -> k.size() > 1).collect(Collectors.toList());
-        sampleQueryKeys = sampleQueryKeys.stream().sorted(Comparator.comparing(sampleQueries::get).reversed()).limit(maxQuerySamples).collect(Collectors.toList());
+        sampleQueryKeys = sampleQueryKeys.stream().sorted(Comparator.comparing(sampleQueries::get).reversed()).collect(Collectors.toList());
 
         // Minimize sum of query worst-case times, weighted by query frequency.
         int numSampleQueries = sampleQueryKeys.size();
@@ -75,22 +220,24 @@ public class LoadBalancer {
             }
         }
 
-        int[] queryWeights = sampleQueryKeys.stream().map(sampleQueries::get).mapToInt(i -> i).toArray();
+        int[] queryWeights = sampleQueryKeys.stream().map(sampleQueries::get).mapToInt(i ->i).toArray();
         IloObjective parallelObjective = cplex.minimize(cplex.scalProd(m, queryWeights));
         cplex.add(parallelObjective);
 
         setCoreConstraints(cplex, r, x, numShards, numServers, shardLoads, shardMemoryUsages, maxMemory);
 
         // Solve parallel objective.
-        double[] optimalM = null;
         if (numSampleQueries > 0) {
             cplex.solve();
-            optimalM = cplex.getValues(m);
+            lastM = cplex.getValues(m);
+        } else {
+            lastM = new double[m.length];
+            Arrays.fill(lastM, 20.0);
         }
 
         // Begin transfer objective.
         cplex = new IloCplex();
-        cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, mipGap);
+         cplex.setParam(IloCplex.Param.MIP.Tolerances.MIPGap, 0.05);
         if (!verbose) {
             cplex.setOut(null);
         }
@@ -109,14 +256,14 @@ public class LoadBalancer {
         IloObjective transferObjective = cplex.minimize(cplex.sum(transferCostList));
         cplex.add(transferObjective);
 
-        for(int serverNum = 0; serverNum < numServers; serverNum++) { // Ensure transfer solution conforms to parallelism solution.
+        for(int serverNum = 0; serverNum < numServers; serverNum++) {
             int q = 0;
             for (Set<Integer> shards : sampleQueryKeys) {
                 IloNumExpr e = cplex.constant(0);
                 for (Integer shardNum : shards) {
                     e = cplex.sum(e, x.get(serverNum)[shardNum]);
                 }
-                cplex.addLe(e, optimalM[q]);
+                cplex.addLe(e, lastM[q]);
                 q++;
             }
         }
@@ -126,11 +273,15 @@ public class LoadBalancer {
         // Solve transfer objective.
         cplex.solve();
 
-        List<double[]> optimalR = new ArrayList<>();
+        lastNumShards = numShards;
+        lastNumServers = numServers;
+        lastR = new ArrayList<>();
+        lastX = new ArrayList<>();
         for (int i = 0; i < numServers; i++) {
-            optimalR.add(cplex.getValues(r.get(i)));
+            lastR.add(cplex.getValues(r.get(i)));
+            lastX.add(cplex.getValues(x.get(i)));
         }
-        return optimalR;
+        return lastR;
     }
 
 
@@ -138,6 +289,7 @@ public class LoadBalancer {
     private static void setCoreConstraints(IloCplex cplex, List<IloNumVar[]> r, List<IloNumVar[]> x, Integer numShards, Integer numServers,
                                            int[] shardLoads, int[] shardMemoryUsages,
                                            Integer maxMemory) throws IloException {
+        int actualReplicationFactor = minReplicationFactor < numServers ? minReplicationFactor : numServers;
         double averageLoad = (double) Arrays.stream(shardLoads).sum() / numServers;
         double epsilon = averageLoad / 20;
 
@@ -152,6 +304,9 @@ public class LoadBalancer {
         for (int i = 0; i < numServers; i++) {
             for (int j = 0; j < numShards; j++) {
                 cplex.addLe(r.get(i)[j], x.get(i)[j]); // Ensure x_ij is 1 if r_ij is positive.
+                if (actualReplicationFactor > 1) {
+                    cplex.addLe(x.get(i)[j], cplex.sum(r.get(i)[j], 0.9999));
+                }
             }
         }
 
@@ -168,7 +323,54 @@ public class LoadBalancer {
             for (int i = 0; i < numServers; i++) {
                 xShardServers[i] = x.get(i)[j];
             }
-            cplex.addGe(cplex.sum(xShardServers), 1); // Require each shard to appear on at least one server.
+            cplex.addGe(cplex.sum(xShardServers), actualReplicationFactor); // Require each shard to be replicated N times.
         }
+    }
+
+    /**
+     * Balance cluster load.
+     * @param shardLoads Mapping from shard number to load.
+     * @param shardMap Map from shard to location.
+     * @return Map from shard to location.
+     */
+    public static Integer epsilonRatio = 20;
+    public static Map<Integer, Integer> heuristicBalance(Map<Integer, Integer> shardLoads, Map<Integer, Integer> shardMap, List<Integer> serversList) {
+        Set<Integer> lostShards = new HashSet<>();
+        Set<Integer> gainedShards = new HashSet<>();
+        Map<Integer, Integer> serverLoads = new HashMap<>();
+        Map<Integer, List<Integer>> serverToShards = new HashMap<>();
+        serverLoads.putAll(serversList.stream().collect(Collectors.toMap(i -> i, i -> 0)));
+        serverToShards.putAll(serversList.stream().collect(Collectors.toMap(i -> i, i -> new ArrayList<>())));
+        for (int shardNum: shardLoads.keySet()) {
+            int shardLoad = shardLoads.get(shardNum);
+            int serverNum = shardMap.get(shardNum);
+            serverLoads.merge(serverNum, shardLoad, Integer::sum);
+            serverToShards.get(serverNum).add(shardNum);
+        }
+        PriorityQueue<Integer> serverMinQueue = new PriorityQueue<>(Comparator.comparing(serverLoads::get));
+        PriorityQueue<Integer> serverMaxQueue = new PriorityQueue<>(Comparator.comparing(serverLoads::get).reversed());
+        serverMinQueue.addAll(serverLoads.keySet());
+        serverMaxQueue.addAll(serverLoads.keySet());
+        double averageLoad = shardLoads.values().stream().mapToDouble(i -> i).sum() / serverLoads.size();
+        double epsilon = averageLoad / epsilonRatio;
+        Map<Integer, Integer> returnMap = new HashMap<>(shardMap);
+        while (serverMaxQueue.size() > 0 && serverLoads.get(serverMaxQueue.peek()) > averageLoad + epsilon) {
+            Integer overLoadedServer = serverMaxQueue.remove();
+            while (serverToShards.get(overLoadedServer).size() > 0 && serverLoads.get(overLoadedServer) > averageLoad + epsilon) {
+                Integer underLoadedServer = serverMinQueue.remove();
+                Integer mostLoadedShard = serverToShards.get(overLoadedServer).stream().filter(i -> shardLoads.get(i) > 0).max(Comparator.comparing(shardLoads::get)).orElse(null);
+                assert(mostLoadedShard != null);
+                serverToShards.get(overLoadedServer).remove(mostLoadedShard);
+                if (serverLoads.get(underLoadedServer) + shardLoads.get(mostLoadedShard) <= averageLoad + epsilon) {
+                    returnMap.put(mostLoadedShard, underLoadedServer);
+                    serverLoads.merge(overLoadedServer, -1 * shardLoads.get(mostLoadedShard), Integer::sum);
+                    serverLoads.merge(underLoadedServer, shardLoads.get(mostLoadedShard), Integer::sum);
+                    lostShards.add(overLoadedServer);
+                    gainedShards.add(underLoadedServer);
+                }
+                serverMinQueue.add(underLoadedServer);
+            }
+        }
+        return returnMap;
     }
 }

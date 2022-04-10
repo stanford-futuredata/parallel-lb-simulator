@@ -12,6 +12,8 @@ public class Server {
 
 	private int busyTime = 0;
 
+	private int _startQueueSize = 0;
+
 	public Server(int id) {
 		this.ID = id;
 		this.pendingAccesses = new LinkedList<ShardAccess>();
@@ -19,6 +21,7 @@ public class Server {
 	}
 
 	public void addAccess(ShardAccess access) { 
+		this._startQueueSize = getRemainingAccesses();
 		pendingAccesses.add(access);
 	}
 
@@ -51,7 +54,7 @@ public class Server {
 			if (!access.isDone()) {
 				pendingAccesses.add(access);
 			} else if (output) {
-				System.out.println(access + " is done at tick " + App.TICK + " with latency " + access.getLatency());
+				System.out.println(access + " on " + this + " is done at tick " + App.TICK + " with latency " + access.getLatency() + " and initial queue size " + this._startQueueSize);
 			}
 		}
 	}
