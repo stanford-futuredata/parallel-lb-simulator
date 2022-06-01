@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class LoadBalancer {
 
-    public static boolean verbose = true;
+    public static boolean verbose = false;
     public static int minReplicationFactor = 1;
 
     List<double[]> lastR;
